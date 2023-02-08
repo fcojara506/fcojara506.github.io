@@ -1,0 +1,200 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			body {
+				color: #444;
+			}
+			.page-content {
+				padding-top: 0;
+				padding-bottom: 5.25em;
+			}
+			
+			header .wrapper {
+				box-shadow: none;
+			}
+			.section {
+				margin-top: 4.5em;
+			}
+			.left-margin {
+				background: #444;
+				width: 4.5em;
+				float: left;
+				height: 1.75em;
+				border-radius: 1px;
+			}
+			.section-content {
+				margin-left: 4.5em;
+				margin-right: 4.5em;
+				padding-left: 0.75em;
+				padding-right: 0.75em;
+			}
+			.section-title {
+				font-size: 1.75em;
+				text-transform: uppercase;
+				line-height: 1;
+			}
+			.example-pixel {
+				display: inline-block;
+				float: right;
+				margin: 0 0.25rem 0 0.25rem;
+				height: 1.75rem;
+				width: 1.75rem;
+				box-shadow: 0 0 0 1px #CCC;
+				border-radius: 2px;
+				background: white;
+				line-height: 1;
+				text-align: center;
+
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			.grid-area {
+			}
+			.pixel {
+				display: inline-block;
+				float: left;
+				margin: 0.25rem;
+				height: 1.75em;
+				width: 1.75em;
+				box-shadow: 0 0 0 1px #CCC;
+				border-radius: 2px;
+				background: white;
+				line-height: 1.5;
+
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+
+				-webkit-transition: background 0.2s linear;
+				-moz-transition: background 0.2s linear;
+				-o-transition: background 0.2s linear;
+				transition: background 0.2s linear;
+			}
+			.pixel:hover {
+			}
+
+			.blue, .red, .yellow, .purple, .orange, .green, .brown, .grey, .black {
+				box-shadow: none;
+			}
+			.blue   {background-color: #5E5EE4;}
+			.red    {background-color: #DC2929;}
+			.yellow {background-color: #FBFB51;}
+			.purple {background-color: #AF5AAF;}
+			.orange {background-color: #FFB52C;}
+			.green  {background-color: #59B159;}
+			.brown  {background-color: #BF8F50;}
+			.grey   {background-color: #ADADAD;}
+			.black  {background-color: #444;}
+
+			@media screen and (max-width: 750px) {
+				html {
+					min-width: 320px;
+				}
+				.page-content {
+					padding-bottom: 0;
+				}
+				.left-margin {
+					display: none;
+				}
+				.section:first-of-type {
+					margin-top: 0;
+				}
+				.section-content {
+					margin-left: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section">
+			<div class="left-margin"></div>
+			<div class="section-content">
+				<div class="section-title">Pixel Art
+					<!--<div class="example-pixel black" style="color: white;">9</div>
+					<div class="example-pixel grey">8</div>
+					<div class="example-pixel brown">7</div>
+					<div class="example-pixel green">6</div>
+					<div class="example-pixel orange">5</div>
+					<div class="example-pixel purple">4</div>
+					<div class="example-pixel yellow">3</div>
+					<div class="example-pixel red">2</div>
+					<div class="example-pixel blue">1</div>
+					<div class="example-pixel">0</div>-->
+				</div>
+
+				<div class="grid-area">
+					<div class="pixel" style="display:none;"></div>
+				</div>	
+			</div>
+		</div>
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+
+			// Set section height
+			$(".section").height($(document).height() - (2*parseInt( $('.section').css("margin-top") )) );
+			$(".grid-area").height("100%");
+
+			// Generate pixels
+			var gridWidth  = Math.floor($(".grid-area").width()  / ($(".pixel").width()  + (2*parseInt($(".pixel").css("margin")))));
+			var gridHeight = Math.floor($(".grid-area").height() / ($(".pixel").height() + (2*parseInt($(".pixel").css("margin")))));
+			var num_pixels = gridWidth * gridHeight;
+			for (i = 0; i < num_pixels; i++) {
+				$('.grid-area').append('<div class="pixel" data-color="0"><span></span></div>')
+			}
+
+
+			// Change pixel color
+			function changeColor(color){
+				var color = parseInt($(this).attr("data-color")) + 1;
+
+				// Remove color
+				$(this).removeClass("blue red yellow purple orange green brown grey black")
+
+				if        (color == 1) { $(this).toggleClass("blue"); 
+				} else if (color == 2) { $(this).toggleClass("red");
+				} else if (color == 3) { $(this).toggleClass("yellow");
+				} else if (color == 4) { $(this).toggleClass("purple");
+				} else if (color == 5) { $(this).toggleClass("orange");
+				} else if (color == 6) { $(this).toggleClass("green");
+				} else if (color == 7) { $(this).toggleClass("brown");
+				} else if (color == 8) { $(this).toggleClass("grey");
+				} else if (color == 9) { $(this).toggleClass("black");
+				} else { var color = 0; }
+				$(this).attr("data-color", color)
+			}
+
+			// Click trigger
+			$(".pixel").click(changeColor)
+
+			// Hover and Keypress trigger
+			$('.pixel').hover(function(){ $(this).toggleClass('active'); });
+
+			$(document).keypress(function (e) {
+
+				// Remove color
+				$(".active").removeClass("blue red yellow purple orange green brown grey black")
+				
+				// Change color
+				if        (e.which == 48) { $('.active').removeClass("blue red yellow purple orange green brown grey black"); $(".active").attr("data-color", 0);
+				} else if (e.which == 49) { $('.active').toggleClass("blue"); $(".active").attr("data-color", 1);
+				} else if (e.which == 50) { $('.active').toggleClass("red"); $(".active").attr("data-color", 2);
+				} else if (e.which == 51) { $('.active').toggleClass("yellow"); $(".active").attr("data-color", 3);
+				} else if (e.which == 52) { $('.active').toggleClass("purple"); $(".active").attr("data-color", 4);
+				} else if (e.which == 53) { $('.active').toggleClass("orange"); $(".active").attr("data-color", 5);
+				} else if (e.which == 54) { $('.active').toggleClass("green"); $(".active").attr("data-color", 6);
+				} else if (e.which == 55) { $('.active').toggleClass("brown"); $(".active").attr("data-color", 7);
+				} else if (e.which == 56) { $('.active').toggleClass("grey"); $(".active").attr("data-color", 8);
+				} else if (e.which == 57) { $('.active').toggleClass("black"); $(".active").attr("data-color", 9); }
+
+			});
+
+		</script>
+	</body>
+</html>
+
+
+
+

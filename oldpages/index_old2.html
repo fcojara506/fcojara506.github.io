@@ -1,0 +1,85 @@
+---
+layout: default
+description: Hayden Elza - Forester and GIS Specialist
+---
+<style>
+  #intro-flow {
+    display: table;
+    margin: 25px 0;
+  }
+  #dp {
+    width: 30%;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+  }
+  #dp img {
+    transition: ease 0.1s;
+    border-radius: 100%;
+    width: 90%;
+    margin: 5%;
+    float: left;
+  }
+  #dp:hover img {
+    transition: ease 0.1s;
+    width: 100%;
+    margin: 0;
+  }
+  #intro-words {
+    display: inline-block;
+    width: 62%;
+    float: right;
+    margin: 10% 1% 0 0;
+  }
+  .project-preview {
+    width: 40%;
+    margin: 5%;
+  }
+  .project-preview img {
+    border: solid black 1px;
+    margin: 1px;
+  }
+  .project-preview:hover img {
+    border: solid gray 2px;
+    margin: 0;
+  }
+  .float-left {
+    float: left;
+  }
+  .float-right {
+    float: right;
+  }
+</style>
+
+<div class="home">
+  
+  <h1 style="font-size: 3em; text-align: center; margin: 0;">Hayden Elza</h1>
+  <h3 style="text-align: center;">Forester / GIS Specialist</h3>
+  
+  <div class="content" style="overflow: hidden">
+    <div id="intro-flow">
+      <a id="dp" href="/about"><img src="/assets/img/index/about2.png" alt="About"></a>
+      <img id="intro-words" src="/assets/img/index/intro.png">
+    </div>
+    <a class="project-preview float-left" href="http://sampleplotter.com"><img src="/assets/img/index/sampleplotter_preview.png" alt="sampleplotter"></a>
+    <a class="project-preview float-right" href="http://maps.aqua.wisc.edu/opengeoportal"><img src="/assets/img/index/ogp_preview.png" alt="ogp"></a>
+  </div>
+
+  <br><br>
+
+  <h1>Recent Blog Posts:</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts limit:5 %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "blog/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

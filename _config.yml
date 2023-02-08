@@ -1,0 +1,12 @@
+# Site settings
+title: Hayden Elza
+email: hayden.elza@gmail.com
+description: >
+  A wild webpage appeared!
+url: "localhost:4000" 
+twitter_username: haydenelza
+github_username:  haydenelza
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:title
