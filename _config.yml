@@ -1,11 +1,10 @@
 # Site settings
-title: Hayden Elza
-email: hayden.elza@gmail.com
-description: >
-  A wild webpage appeared!
+title: Francisco Jara
+email: fcojara506@gmail.com
+description: 
 url: "localhost:4000" 
-twitter_username: haydenelza
-github_username:  haydenelza
+twitter_username: fcojara506
+github_username:  fcojara506
 
 # Build settings
 markdown: kramdown
