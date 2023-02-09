@@ -70,13 +70,13 @@ p{
 	float: left;
 }
 .content {
-	width: 800px;
+	width: 1000px;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 25px;
 	margin-top: 25px;
-	margin-bottom: 85px;
+	margin-bottom: 25px;
 	background-color: rgba(4, 4, 91, 0.85);
 	overflow: hidden;
 }
