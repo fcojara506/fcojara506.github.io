@@ -257,11 +257,9 @@ description: website
 	}
 	
 	.project img {
-		/*
-		-webkit-filter: grayscale(1);
-		-moz-filter: grayscale(1);
-		filter: grayscale(1);
-		*/
+		-webkit-filter: grayscale(0);
+		-moz-filter: grayscale(0);
+		filter: grayscale(0);
 		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 	.project img:hover {
@@ -585,7 +583,7 @@ description: website
 	$(document).ready(function(){
 		$('.project').each(function(){
 			var that = $(this);
-			setTimeout(function(){that.animate({opacity:0.1},1000)}, timeProjects);
+			setTimeout(function(){that.animate({opacity:0.9},1000)}, timeProjects);
 			timeProjects += 300
 		});
 	});
