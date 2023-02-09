@@ -233,8 +233,8 @@ a.page-link:hover:before{
 
 /* Logo hover animation */
 .site-title svg{
-  -webkit-transition: -webkit-transform 2s ease-in-out;
-  transition: transform 2s ease-in-out;
+  -webkit-transition: -webkit-transform 2s ease-in;
+  transition: transform 2s ease-in;
 }
 .site-title svg:hover{
   -webkit-transform: rotate(360deg);
