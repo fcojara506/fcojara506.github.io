@@ -4,6 +4,7 @@ title:
 description: website
 ---
 
+
 <style>
 	::selection {
 		color: white;
@@ -159,16 +160,9 @@ description: website
 		-o-transition: background 0.1s ease-in-out;
 		transition: background 0.1s ease-in-out;
 	}
-	/*.horizontal-bar::after {
-		content: attr(data-percent);
-		float: right;
-		padding-right: 0.5em;
-		color: #808080;
-	}*/
 	.horizontal-bar:hover {
 		background: #ef0075;
 	}
-
 	.list-item {
 		margin-top: 2em;
 		overflow: auto;
@@ -201,41 +195,7 @@ description: website
 		padding-left: 0.75em;
 		font-size: 0.83em;
 	}
-/*
-	#player {
-		width: 100%;
-		height: 100px;
-		margin-top: 2em;
-		filter: saturate(0) contrast(0.7);
-	}
 
-	#tracks {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1em;
-	}
-
-	#tracks > figure {
-		margin: 0;
-	}
-
-	#tracks > figure > img {
-		width: 100%;
-		filter: saturate(0) contrast(0.7);
-		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	#tracks > figure > img:hover {
-		width: 100%;
-		filter: saturate(1) contrast(1);
-		transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.26);
-	}
-
-	#tracks > figure > figcaption {
-		text-align: center;
-	}
-*/
 	.project-container {
 		margin-top: 2em;
 		display: inline-block;
@@ -255,7 +215,7 @@ description: website
 	.project:nth-last-child(-n+2) {
 		margin-bottom: 0;
 	}
-	
+	/**   https://codepen.io/nxworld/pen/ZYNOBZ **/
 	.project img {
 		-webkit-transform: scale(1);
 		transform: scale(1);
@@ -263,8 +223,8 @@ description: website
 		transition: .3s ease-in-out;
 	}
 	.project img:hover {
-		-webkit-transform: scale(1.3);
-		transform: scale(1.3);
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
 	}
 	.project img.wide {
 		max-width: 100%;
