@@ -237,8 +237,8 @@ a.page-link:hover:before{
   transition: transform .5s ease-in-out;
 }
 .site-title svg:hover{
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 .ring{
     width: 69px;
