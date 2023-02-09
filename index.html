@@ -244,16 +244,18 @@ description: website
 		float: left;
 		width: calc((100% - 1em) / 2);
 		border-radius: 2px;
-		margin-right: 0.5em;
+		margin-right: 1em;
 		margin-bottom: 1em;
 		opacity: 0;
 	}
-	.project:nth-child(2n) {
+	.project:nth-child(2n+2) {
 		margin-right: 0;
 	}
+	
 	.project:nth-last-child(-n+2) {
 		margin-bottom: 0;
 	}
+	
 	.project img {
 		/*
 		-webkit-filter: grayscale(1);
