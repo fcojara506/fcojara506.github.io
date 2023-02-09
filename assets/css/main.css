@@ -70,14 +70,14 @@ p{
 	float: left;
 }
 .content {
-	width: 700px;
+	width: 800px;
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 25px;
 	margin-top: 25px;
 	margin-bottom: 85px;
-	background-color: rgba(15,15,20,0.85);
+	background-color: rgba(4, 4, 91, 0.85);
 	overflow: hidden;
 }
 .col2 {
@@ -199,4 +199,5 @@ $bgobj.css({
 	'-moz-background-size': 'cover',
 	'-o-background-size': 'cover',
 	'background-size': 'cover'
-			 })
+			 }
+			 )

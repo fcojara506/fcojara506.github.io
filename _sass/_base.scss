@@ -233,12 +233,12 @@ a.page-link:hover:before{
 
 /* Logo hover animation */
 .site-title svg{
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
 }
 .site-title svg:hover{
-  -webkit-transform: rotate(15deg);
-  transform: rotate(15deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .ring{
     width: 69px;

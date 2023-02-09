@@ -20,7 +20,7 @@ description: website
 	}
 	body {
 		 /**background: url(/assets/img/backgrounds/gray_jean.png);**/
-		color: #444;
+		color: rgb(255, 0, 0);
 	}
 	.socmed-icons a svg {
 		height: 1.75em;
@@ -61,7 +61,7 @@ description: website
 	.wrapper {
 		padding-left: 0;
 		padding-right: 5.25em;
-		box-shadow: 0 1px 3px rgba(0,0,0,.1);
+		box-shadow: 0 1px 3px rgba(0,0,0,.99);
 		border-radius: 2px;
 	}
 	header .wrapper {
@@ -77,7 +77,7 @@ description: website
 	.left-margin {
 		position: relative;
 		background: #444;
-		width: 1.5em;
+		width: 4.5em;
 		float: left;
 		height: 1.75em;
 		border-radius: 1px;
@@ -179,6 +179,9 @@ description: website
 	}
 	.list-title {
 		font-weight: bold;
+	}
+	.list-subtitle {
+
 	}
 	.list-date {
 		font-style: italic;
@@ -561,29 +564,6 @@ description: website
 			<div class="horizontal-bar" data-percent="40%"><span>R</span></div>
 			<div class="horizontal-bar" data-percent="100%"><span>SQL</span></div>
 		</div>	
-	</div>
-</div>
-
-<!-- Contact -->
-<div id="Contact" class="section">
-	<div class="left-margin"></div>
-	<div class="section-content">
-		<div class="section-title">Contact</div>
-		<form action="https://formspree.io/forms.elza@gmail.com" method="post">
-			<div class="form-line">
-				<input id="name" name="name" type="text" placeholder="Name" required>
-			</div>
-			<div class="form-line">
-				<input id="email" name="email" type="email" placeholder="Email" required>
-			</div>
-			<div class="form-line">
-				<textarea id="message" name="message" type="text" placeholder="Type your message here." required></textarea>
-			</div>
-			<input type="hidden" name="_subject" value="Message from Contact Form" />
-			<input type="text" name="_gotcha" style="display:none" />
-			<!--  <input type="hidden" name="_next" value="https://elza.me" /> -->
-			<input type="submit" value="Submit">
-		</form>
 	</div>
 </div>
 
