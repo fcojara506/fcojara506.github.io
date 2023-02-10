@@ -83,7 +83,7 @@ p{
 .col2 {
 	width: 44%;
 	display: inline-block;
-	float: left;
+	float:left;
 	margin: 3%;
 	position: relative;
 }
