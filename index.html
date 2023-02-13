@@ -292,83 +292,86 @@ description: website
 
 
 
+
+
+
 /* Grid-related CSS */
 :root {
-  --square-size: 15px;
-  --square-gap: 5px;
-  --week-width: calc(var(--square-size) + var(--square-gap));
+  --squareSize: 15px;
+  --defaultColor: #76767600;
+  --fontColor: #000000;
+  --level4: #196127;
+  --level3:  #7bc96f;
+  --level2: #c6e48b;
+  --level1: #ebedf0;
+  --numWeeks: 52;
+  --grid-gap: 5px;
+  --github-gap: 10px;
 }
 
-.months { grid-area: months; }
-.days { grid-area: days; }
-.squares { grid-area: squares; }
+.github {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: var(--github-gap);
+  grid-template-areas:
+    ". months"
+    "weekdays contributions";
 
-.graph {
-  display: inline-grid;
-  grid-template-areas: "empty months"
-                       "days squares";
-  grid-template-columns: auto 1fr;
-  grid-gap: 10px;
+  font-size: 14px;
+  color: var(--fontColor);
+}
+
+.weekdays {grid-area: weekdays;}
+
+.contributions {
+  grid-area: contributions;
+}
+
+.weekdays,
+.contributions {
+  display: grid;
+  grid-gap: var(--grid-gap);
+  grid-template-rows: repeat(7, var(--squareSize));
 }
 
 .months {
+  grid-area: months;
+  padding: 5px 0;
+
   display: grid;
-  grid-template-columns: calc(var(--week-width) * 4) /* Jan */
-                         calc(var(--week-width) * 4) /* Feb */
-                         calc(var(--week-width) * 4) /* Mar */
-                         calc(var(--week-width) * 5) /* Apr */
-                         calc(var(--week-width) * 4) /* May */
-                         calc(var(--week-width) * 4) /* Jun */
-                         calc(var(--week-width) * 5) /* Jul */
-                         calc(var(--week-width) * 4) /* Aug */
-                         calc(var(--week-width) * 4) /* Sep */
-                         calc(var(--week-width) * 5) /* Oct */
-                         calc(var(--week-width) * 4) /* Nov */
-                         calc(var(--week-width) * 5) /* Dec */;
+  grid-template-columns: repeat(var(--numWeeks), var(--squareSize));
+  grid-column-gap: var(--grid-gap);
+  justify-items: center;
+  align-items: center;
 }
 
-.days,
-.squares {
-  display: grid;
-  grid-gap: var(--square-gap);
-  grid-template-rows: repeat(7, var(--square-size));
-}
+.month {grid-row: 1;}
 
-.squares {
+.jan { grid-column: 45 / span 5; }
+.feb { grid-column: 50 / span 3; }
+.mar { grid-column: 1 / span 5; }
+.apr { grid-column: 6 / span 4; }
+.may { grid-column: 10 / span 5; }
+.jun { grid-column: 15 / span 4; }
+.jul { grid-column: 19 / span 5; }
+.aug { grid-column: 24 / span 4; }
+.sep { grid-column: 28 / span 4; }
+.oct { grid-column: 32 / span 5; }
+.nov { grid-column: 37 / span 4; }
+.dec { grid-column: 41 / span 4; }
+
+
+.contributions {
   grid-auto-flow: column;
-  grid-auto-columns: var(--square-size);
+  grid-auto-columns: var(--squareSize);
 }
 
+.square {border: 1px solid var(--defaultColor);}
 
-/* Other styling */
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 12px;
-}
-.graph {
-  padding: 20px;
-  border: 0px #e1e4e8 solid;
-  margin: 20px;
-}
-.days li:nth-child(odd) {
-  visibility: hidden;
-}
-.squares li {
-  background-color: #ebedf0;
-}
-.squares li[data-level="1"] {
-  background-color: #c6e48b;
-}
-.squares li[data-level="2"] {
-  background-color: #7bc96f;
-}
-.squares li[data-level="3"] {
-  background-color: #196127;
-}
-
-
-
+.darkgreen {background: var(--level4);}
+.green {background: var(--level3);}
+.lightgreen {background: var(--level2);}
+.gray {background: var(--level1);}
 
 
 
@@ -602,33 +605,32 @@ body {
 </div>
 
 <!-- Skills -->
-<div class="graph">
-    <ul class="months">
-      <li>Jan</li>
-      <li>Feb</li>
-      <li>Mar</li>
-      <li>Apr</li>
-      <li>May</li>
-      <li>Jun</li>
-      <li>Jul</li>
-      <li>Aug</li>
-      <li>Sep</li>
-      <li>Oct</li>
-      <li>Nov</li>
-      <li>Dec</li>
-    </ul>
-    <ul class="days">
-      <li>Sun</li>
-      <li>Mon</li>
-      <li>Tue</li>
-      <li>Wed</li>
-      <li>Thu</li>
-      <li>Fri</li>
-      <li>Sat</li>
-    </ul>
-    <ul class="squares">
-      <!-- added via javascript -->
-    </ul>
+<div class="github">
+	<div class="weekdays">
+	  <div class="weekday">&nbsp;</div>
+	  <div class="weekday">Mon</div>
+	  <div class="weekday">&nbsp;</div>
+	  <div class="weekday">Wed</div>
+	  <div class="weekday">&nbsp;</div>
+	  <div class="weekday">Fri</div>
+	  <div class="weekday">&nbsp;</div>
+	</div>
+	<div class="months">
+	  <div class="mar month">Mar</div>
+	  <div class="apr month">Apr</div>
+	  <div class="may month">May</div>
+	  <div class="jun month">Jun</div>
+	  <div class="jul month">Jul</div>
+	  <div class="aug month">Aug</div>
+	  <div class="sep month">Sep</div>
+	  <div class="oct month">Oct</div>
+	  <div class="nov month">Nov</div>
+	  <div class="dec month">Dec</div>
+	  <div class="jan month">Jan</div>
+	  <div class="feb month">Feb</div>
+	</div>
+	<div class="contributions">
+	</div>
   </div>
 
 <br><br><br>
@@ -637,8 +639,10 @@ body {
 <script src="https://open.spotify.com/embed-podcast/iframe-api/v1" async></script>
  -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-<script type="text/javascript">
 
+
+
+<script type="text/javascript">
 	// skill animation when scrolled to
 	$(document).ready(function() {
 
@@ -677,11 +681,27 @@ body {
 	});
 
 // Add squares
+var contributions = document.getElementsByClassName('contributions')[0];
+    var str = '';
+    for (var i = 0; i < 366; i++) {
+      str += `<div class="square ${getContribColor()}"></div>`;
+    }
+    contributions.innerHTML = str;
 
-const squares = document.querySelector('.squares');
-for (var i = 1; i < 365; i++) {
-  const level = Math.floor(Math.random() * 3);  
-  squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
-}
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function getContribColor() {
+      var num = getRandomInt(4);
+      if (num === 0) {
+        return 'gray';
+      } else if (num === 1) {
+        return 'darkgreen';
+      } else if (num === 2) {
+        return 'green';
+      }
+      return 'lightgreen';
+    }
 
 </script>
