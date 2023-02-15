@@ -13,7 +13,7 @@ a.page-link:before {
 }
 body {
 	margin: 0;
-	background-color: rgb(178, 0, 0);
+	background-color: rgb(255, 255, 255);
 	color: rgb(1, 6, 62);
 }
 
@@ -51,7 +51,7 @@ svg circle {
 	padding-top: 5.25em;
 }
 .site-header, .wrapper {
-	background: white; 
+	background: rgba(255, 255, 255, 0); 
 }
 .wrapper {
 	padding-left: 0;
@@ -133,30 +133,6 @@ header .wrapper {
 	font-size: 0.85em;
 }
 
-.horizontal-bar-chart {
-	padding-top: 0.75em;
-}
-.horizontal-bar {
-	margin-top: 0.25em;
-	height: 1.75em;
-	width: 0px;
-	border-radius: 2px;
-	background: #444;
-	font-size: 0.65em;
-	color: white;
-	text-transform: uppercase;
-	line-height: 1.5;
-	padding-left: 0.5em;
-	padding-top: 0.25em;
-	-webkit-transition: background 0.1s ease-in-out;
-	-moz-transition: background 0.1s ease-in-out;
-	-o-transition: background 0.1s ease-in-out;
-	transition: background 0.1s ease-in-out;
-}
-.horizontal-bar:hover {
-	background: #54b3d6;
-	color: black;
-}
 .list-item {
 	margin-top: 2em;
 	overflow: auto;
@@ -264,22 +240,8 @@ input[type=text], input[type=email], textarea {
 textarea {
 	resize: vertical;
 }
-input[type=submit] {
-	color: #444;
-	background: none;
-	border: none;
-	border-left: solid #444 0.25em;
-	border-right: solid #444 0.25em;
-	padding: 0.25em 0.75em 0.25em 0.75em;
-	text-decoration: none;
-	cursor: pointer;
-	-webkit-transition: padding-left 0.4s, padding-right 0.4s; /* Safari */
-	transition: padding-left 0.4s, padding-right 0.4s;
-}
-input[type=submit]:hover {
-	padding-left: 1.75em;
-	padding-right: 1.75em;
-}
+
+
 /* Article - https://bitsofco.de/github-contribution-graph-css-grid/ */
 
 
@@ -291,7 +253,7 @@ input[type=submit]:hover {
 /* Grid-related CSS */
 :root {
 --squareSize: 15px;
---defaultColor: #76767600;
+--defaultColor: #000000;
 --fontColor: #000000;
 --level4: #196127;
 --level3:  #7bc96f;
@@ -309,7 +271,6 @@ grid-gap: var(--github-gap);
 grid-template-areas:
 ". months"
 "weekdays contributions";
-
 font-size: 14px;
 color: var(--fontColor);
 }
@@ -365,28 +326,11 @@ grid-auto-columns: var(--squareSize);
 .lightgreen {background: var(--level2);}
 .gray {background: var(--level1);}
 
-body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+
+.darkgreen:hover, .green:hover, .lightgreen:hover,.gray:hover {
+	background: #d65454;
+	border: 2px solid var(--defaultColor);
 }
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-
-
-
 
 
 
