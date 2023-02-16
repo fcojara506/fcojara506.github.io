@@ -285,7 +285,7 @@ grid-area: contributions;
 .contributions {
 display: grid;
 grid-gap: var(--grid-gap);
-grid-template-rows: repeat(7, var(--squareSize));
+grid-template-rows: repeat(5, var(--squareSize));
 }
 
 .months {
@@ -299,21 +299,18 @@ justify-items: center;
 align-items: center;
 }
 
-.month {grid-row: 1;}
-
-.jan { grid-column: 45 / span 5; }
-.feb { grid-column: 50 / span 3; }
-.mar { grid-column: 1 / span 5; }
+.mar { grid-column: 1 / span 4; }
 .apr { grid-column: 6 / span 4; }
-.may { grid-column: 10 / span 5; }
+.may { grid-column: 10 / span 4; }
 .jun { grid-column: 15 / span 4; }
-.jul { grid-column: 19 / span 5; }
+.jul { grid-column: 19 / span 4; }
 .aug { grid-column: 24 / span 4; }
 .sep { grid-column: 28 / span 4; }
-.oct { grid-column: 32 / span 5; }
+.oct { grid-column: 32 / span 4; }
 .nov { grid-column: 37 / span 4; }
 .dec { grid-column: 41 / span 4; }
-
+.jan { grid-column: 45 / span 4; }
+.feb { grid-column: 50 / span 4; }
 
 .contributions {
 grid-auto-flow: column;
