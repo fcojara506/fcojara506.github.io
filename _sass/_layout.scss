@@ -47,20 +47,6 @@
         width:fit-content;
     }
 
-    .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
-        vertical-align: bottom;
-        cursor: pointer;
-        margin-left:calc(1.5em - 15px);
-        margin-right:calc(1.5em - 15px)
-
-        /** Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-        **/
-    }
    
     @include media-query($on-palm) {
         position: absolute;
