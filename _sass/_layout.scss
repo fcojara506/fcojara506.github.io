@@ -3,9 +3,7 @@
  */
 
 .site-header {
-
-    min-height: 56px;
-    height:60px;
+    height:80px;
     max-width:100vw;
     width:100%;
     box-shadow: none !important;
@@ -44,6 +42,9 @@
 
     .menu-icon {
         display: none;
+        width:-webkit-fit-content;
+        width:-moz-fit-content;
+        width:fit-content;
     }
 
     .page-link {
@@ -56,7 +57,7 @@
             margin-left: 20px;
         }
     }
-
+   
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
@@ -80,9 +81,6 @@
                 width: 18px;
                 height: 15px;
 
-                path {
-                    fill: $grey-color-dark;
-                }
             }
         }
 
