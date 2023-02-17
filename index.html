@@ -266,9 +266,9 @@ description: website
 			<div class="left-margin"></div>
 			<div class="section-content">
 				<div class="section-title">Skills</div>
-				<div id="dashboard" style="overflow: scroll">
+				<div id="dashboard">
 					<div id="control"></div>
-					<div id="chart" style="position: relative; height: 500px"></div>
+					<div id="chart" style="position: relative;height:25vw;"></div>
 				</div>
 			</div>
 		</div>
@@ -378,13 +378,7 @@ description: website
 			["Hydrological", "GRxJ", "l3", new Date(2020, 3), new Date(2020, 11)],
 			["Hydrological", "HBV light", "l3", new Date(2018, 1), new Date(2018, 7)],
 			["Projects", "Arduino", "l3", new Date(2019, 11), new Date(2019, 12)],
-			[
-				"Projects",
-				"Google Earth Engine",
-				"l3",
-				new Date(2020, 7),
-				new Date(2021, 6),
-			],
+			["Projects", "Google Earth Engine","l3", new Date(2020, 7),new Date(2021, 6)],
 		]);
 
 		google.visualization.events.addListener(dashboard, "ready", function () {
@@ -459,27 +453,5 @@ description: website
 		});
 	});
 
-	// Add squares
-	var contributions = document.getElementsByClassName("contributions")[0];
-	var str = "";
-	for (var i = 0; i < 366; i++) {
-		str += `<div class="square ${getContribColor()}"></div>`;
-	}
-	contributions.innerHTML = str;
 
-	function getRandomInt(max) {
-		return Math.floor(Math.random() * Math.floor(max));
-	}
-
-	function getContribColor() {
-		var num = getRandomInt(4);
-		if (num === 0) {
-			return "gray";
-		} else if (num === 1) {
-			return "darkgreen";
-		} else if (num === 2) {
-			return "green";
-		}
-		return "lightgreen";
-	}
 </script>
