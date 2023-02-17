@@ -32,6 +32,12 @@
  
 }
 
+a.page-link {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 a.page-link:hover {
   color: #444;
   text-decoration-style: wavy;
