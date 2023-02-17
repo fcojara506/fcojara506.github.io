@@ -43,9 +43,7 @@ a.page-link:hover {
   text-underline-offset: 3px;
 }
 
-a.page-link:before {
-  background-color: #444;
-}
+
 
 body {
   margin: 0;
