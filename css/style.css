@@ -379,3 +379,33 @@ grid-auto-columns: var(--squareSize);
 		margin-bottom: 0 !important;
 	}
 }
+
+
+
+
+
+
+
+.filter-date {
+	color: rgb(0, 0, 0);
+	font-weight: normal;
+	white-space: nowrap;
+  }
+
+  .filter-date .google-visualization-controls-slider-horizontal {
+	width:800px ;
+  }
+  .google-visualization-controls-slider-thumb{
+	width: 10px;
+    height: 16px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-color: #000000;
+    border: 0px solid #426dc900;
+    position: absolute;
+  }
+  .google-visualization-controls-rangefilter-thumblabel {
+    color: #000000;
+    font-weight: normal;
+    padding: 0 0.2em;
+}
