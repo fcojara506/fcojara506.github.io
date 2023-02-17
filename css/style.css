@@ -46,6 +46,11 @@ svg circle {
 	padding-top: 0;
 	padding-bottom: 5.25em;
 }
+.section {
+	margin-top: 4.5em;
+	box-shadow: 0 3px 10px rgba(0,0,0,.3);
+}
+
 .section:first-of-type {
 	margin-top: 5.25em;
 	padding-top: 5.25em;
@@ -56,7 +61,7 @@ svg circle {
 .wrapper {
 	padding-left: 0;
 	padding-right: 5.25em;
-	box-shadow: 0 1px 10px rgba(0,0,0,.7);
+	box-shadow: 0 10px 10px rgba(0,0,0,.7);
 	border-radius: 5px;
 }
 header .wrapper {
@@ -66,9 +71,7 @@ header .wrapper {
 	margin-right: -5.25em;
 }
 
-.section {
-	margin-top: 4.5em;
-}
+
 .left-margin {
 	position: relative;
 	background: #444;
@@ -387,13 +390,14 @@ grid-auto-columns: var(--squareSize);
 
 
 .filter-date {
+	margin-top: 4.5em;
 	color: rgb(0, 0, 0);
 	font-weight: normal;
 	white-space: nowrap;
   }
 
   .filter-date .google-visualization-controls-slider-horizontal {
-	width:800px ;
+	width:auto;
   }
   .google-visualization-controls-slider-thumb{
 	width: 10px;
