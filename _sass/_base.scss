@@ -206,30 +206,8 @@ pre {
 a.page-link{
     position: relative;
     color: #000;
-    text-decoration: none;
 }
-a.page-link:hover{
-    color: #000;
-}
-a.page-link:before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #000;
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
-a.page-link:hover:before{
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-}
+
 
 /* Logo hover animation */
 .site-title svg{
