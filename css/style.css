@@ -6,11 +6,11 @@
   color: black;
   background: #a8e4ec;
 }
-
+/**
 .site-nav .page-link {
   color: #444;
 }
-
+**/
 
 .highlight-container,
 .highlighting {
@@ -31,7 +31,7 @@
   border-radius: 20% 25% 20% 24%;
  
 }
-
+/**
 a.page-link {
   list-style-type: none;
   margin: 0;
@@ -43,6 +43,7 @@ a.page-link:hover {
   text-decoration-style: wavy;
   text-underline-offset: 3px;
 }
+**/
 
 
 
