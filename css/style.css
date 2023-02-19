@@ -6,7 +6,9 @@
   --shadow-color-black: #000;
   --background-opaque: hsla(0, 0%, 100%, 0.7);
   --border-modal: #eff1f4;
-   --text-light: #6b6f76;
+  --text-light: #6b6f76;
+  --margin-left: 4.5em;
+  --margin-right: 3em;
 }
 
 html {
@@ -77,6 +79,21 @@ a.page-link:hover {
 **/
 
 
+.row{
+  box-sizing: border-box;
+}
+/* Set additional styling options for the columns*/
+.column {
+float: left;
+width: 50%;
+}
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
 
 body {
   margin: 0;
@@ -93,6 +110,7 @@ body {
   -o-transition: all 0.3s ease-in-out;
   /** Opera **/
   transition: all 0.3s ease-in-out;
+
 }
 
 .socmed-icons a svg:hover {
@@ -127,10 +145,6 @@ body {
   border-radius: 10px;
 }
 
-.section:first-of-type {
-  margin-top: 5.25em;
-  padding-top: 5.25em;
-}
 
 .site-header{
 	overflow: hidden;
@@ -159,8 +173,8 @@ header .wrapper {
 }
 
 .section-content {
-  margin-left: 4.5em;
-  padding-left: 0.75em;
+  margin-left: var(--margin-left);
+  margin-right: var(--margin-right);
 }
 
 .section-title {
@@ -168,11 +182,13 @@ header .wrapper {
   line-height: 1;
 }
 
-.socmed-icons {
-  float: right;
+.socmed-icons a {
+  /*float: center;*/
+  align-items: center;
 }
 
 .section-subtitle {
+  /*margin-left: var(--margin-left);*/
   line-height: 1;
   margin-top: 0.25em;
 }
@@ -480,7 +496,45 @@ a.td-navbar-item:hover {
 }
 
 
+.button_sleek {
+  position: relative;
+  display: flex;
+  justify-content: var(--horizontal-alignment);
+  width: var(--width);
+  max-width: var(--max-width);
+}
 
+.button_sleek1 {
+  position: relative;
+  padding: 12px 20px;
+  border-radius: 999px;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-family: inherit;
+  font-size: unset;
+  line-height: unset;
+  background-color: unset;
+}
+a .button_sleek1,
+.button_sleek1[type="submit"]{
+  cursor: pointer;
+}
+
+._1buablx0 > .button_sleek,
+.x1sja70 > .button_sleek {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+._122mapi0 > .button_sleek {
+  width: 100%;
+  max-width: 100%;
+}
 .yk4y7v0:hover ._1untytp0 {
   text-decoration: underline;
 }
@@ -637,9 +691,7 @@ a.td-navbar-item:hover {
     margin-top: 0;
   }
 
-  .section-content {
-    margin-left: 0;
-  }
+
 
   .list-head {
     float: none;
