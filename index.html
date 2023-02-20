@@ -3,6 +3,7 @@
 <html>
 
 <head>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,68 +16,78 @@
 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="canonical" href="localhost:4000/">
-
-
+</head>
 
 <body>
+	<header>
+		<div id="__next">
 
-	<div id="__next">
-		<nav id="td-navbar" class="td-navbar td-navbar-container-shadow" role="navigation" aria-label="main navigation"
-			style="position: fixed; height: 60px; max-width: 100vw; width: 100%">
-			<div class="td-navbar-brand">
-				<a href="https://fcojara506.github.io/" target="_self" class="td-navbar-item" rel="noreferrer">
-					<div class="td-navbar-brand-logo">
-						<img src="assets/img/avatar.svg" style="height: 28px; max-height: 3rem" alt="website logo" />
-					</div>
-					<div class="td-navbar-item-link" role="none">
-						<span>Francisco Jara</span>
-					</div>
-				</a><a role="button" class="td-navbar-burger" tabindex="0" aria-label="menu" aria-expanded="false"><span
-						aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a>
-			</div>
-			<div class="td-navbar-middle">
-				<a href="https://fcojara506.github.io/" target="_self" class="td-navbar-item" rel="noreferrer">
-					<div class="td-navbar-item-link" role="none" style="color: var(--text-sharp)">
-						<span>Home</span>
-					</div>
-				</a><a href="#consulting" target="_self" class="td-navbar-item">
-					<div class="td-navbar-item-link" role="none" style="color: var(--text-sharp)">
-						<span>Consulting</span>
-					</div>
-				</a><a href="#about" target="_self" class="td-navbar-item" rel="noreferrer">
-					<div class="td-navbar-item-link" role="none" style="color: var(--text-sharp)">
-						<span>About</span>
-					</div>
-				</a>
-			</div>
-			<div class="td-navbar-end">
-				<a href="/#newsletter" target="_self" class="td-navbar-item" rel="noreferrer">
+			<nav id="td-navbar" class="td-navbar td-navbar-container-shadow" role="navigation"
+				aria-label="main navigation" style="position: fixed; height: 60px; max-width: 100vw; width: 100%">
+
+				<!-- brand -->
+				<div class="td-navbar-brand">
+					<a target="_self" class="td-navbar-item" rel="noreferrer">
+						<div class="td-navbar-brand-logo"><img src="assets/img/avatar.svg"
+								style="height: 28px; max-height: 3rem" alt="website logo" /></div>
+						<div class="td-navbar-item-link" role="none"><span>Francisco Jara</span></div>
+					</a>
+					<!-- links -->
+					<a role="button" class="td-navbar-burger" tabindex="0" aria-label="menu" aria-expanded="false" onclick="toggleMobileMenu(this)">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</a>
+
+				</div>
+				<!-- links -->
+				<div class="td-navbar-middle">
+
+					<a href="https://fcojara506.github.io/" target="_self" class="td-navbar-item">
+						<div class="td-navbar-item-link" style="color: var(--text-sharp)">
+							<span>Home</span>
+						</div>
+					</a>
+
+					<a href="#consulting" target="_self" class="td-navbar-item">
+						<div class="td-navbar-item-link" style="color: var(--text-sharp)">
+							<span>Consulting</span>
+						</div>
+					</a>
+
+					<a href="#about" target="_self" class="td-navbar-item">
+						<div class="td-navbar-item-link" style="color: var(--text-sharp)">
+							<span>About</span>
+						</div>
+					</a>
+				</div>
+				<!-- newsletter -->
+				<div class="td-navbar-end">
+					<a href="/#newsletter" target="_self" class="td-navbar-item">
 
 
-					<div class="button_sleek" style="
+						<div class="button_sleek" style="
                     --width: 700px;
                     --max-width: min(100%, 700px);
                     --horizontal-alignment: right;">
-								<a href="#newsletter" rel="noreferrer"><button class="button_sleek1" style="
+							<a href="#newsletter" rel="noreferrer"><button class="button_sleek1" style="
                         background: #000000;
                         color: #ffffff;
                         box-shadow: 0 10px 20px -10px var(--shadow-color-black);
                       " type="button">
-										<div></div>
-										<span class="_1untytp0">Newsletter →</span>
-									</button></a>
-							</div>
-
-
-
-
-					</div>
+									<div></div>
+									<span class="_1untytp0">Newsletter →</span>
+								</button></a>
+						</div>
+				</div>
 				</a>
-			</div>
+		</div>
+
+
 		</nav>
 		<div style="height: 60px"></div>
-	</div>
-
+		</div>
+	</header>
 
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -85,12 +96,12 @@
 		<div class="wrapper">
 
 
-<!-- Intro -->
+			<!-- Intro -->
 			<div id="Intro" class="section">
 
 				<div class="section-content">
 					<div class="row">
-<!-- Left Column -->
+						<!-- Left Column -->
 						<div class="column">
 
 							<div class="slate"
@@ -110,10 +121,11 @@
 							</div>
 						</div>
 
-<!-- Right Column -->
+						<!-- Right Column -->
 						<div class="column">
 
-							<div class="section-title" style="line-height: 0.1;padding: 0px;color: #333; text-align: center;">
+							<div class="section-title"
+								style="line-height: 0.1;padding: 0px;color: #333; text-align: center;">
 								<span class="_1untytp0"><span style="
 								color: #000000;
 								font-family: Inter;
@@ -127,38 +139,40 @@
 							</div>
 
 
-							<div class="section-subtitle" style="color: var(--text-light);text-align: center;"> Engineer, Data Scientist &amp; Hydrologist</div>
-							
+							<div class="section-subtitle" style="color: var(--text-light);text-align: center;">
+								Engineer, Data Scientist &amp; Hydrologist</div>
+
 							<p class="skip" style="
 							--width: 700px;
 							--max-width: min(100%, 700px);
 							text-align: center;
 						  ">
-						  <div class="section-subtitle" style="color: var(--text-light);text-align: center;"> </div>
-						   <br /><br />
+							<div class="section-subtitle" style="color: var(--text-light);text-align: center;"> </div>
+							<br /><br />
 
 							<div class="button_sleek" style="
 							--width: 700px;
 							--max-width: min(100%, 700px);
 							--horizontal-alignment: center;">
 								<a href="#consulting" rel="noreferrer"><button class="button_sleek1"
-									style="background: #000000;color: #ffffff;box-shadow: 0 10px 20px -10px var(--shadow-color-black);"
-						 type="button">
+										style="background: #000000;color: #ffffff;box-shadow: 0 10px 20px -10px var(--shadow-color-black);"
+										type="button">
 										<div></div>
 										<span class="_1untytp0">Get in touch →</span>
 									</button></a>
 							</div>
 
 							<br /><br />
-						
+
 
 
 
 
 							<div class="socmed-icons" style="justify-content: center;">
 								<a href="https://github.com/fcojara506"><svg version="1.1" id="Layer_1"
-										xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px"
-										y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+										xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+										x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+										xml:space="preserve">
 										<g>
 											<path fill-rule="evenodd" clip-rule="evenodd"
 												d="M50,0C22.386,0,0,22.386,0,50s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0z M81.783,61.244c-0.621,2.206-0.849,2.86-1.108,3.49l-0.174,0.406c-2.748,6.233-8.71,10.244-21.135,11.477l-17.62-0.021 c-11.65-1.255-18.198-5.255-21.52-11.446c0,0-0.102-0.171-0.213-0.403c-0.326-0.643-0.615-1.308-0.875-1.994 c-0.11-0.219-0.089-0.162-0.155-0.417c-1.181-3.313-1.665-7.125-1.665-11.375c0-5.628,2.035-10.221,5.367-13.817 c-0.533-1.304-2.285-6.553,0.55-13.644c0,0,4.343-1.375,14.183,5.336c4.127-1.132,8.554-1.688,12.934-1.688 c3.98,0,7.955,0.461,11.689,1.394c6.854-4.587,10.959-5.187,12.726-5.16c0.69,0.01,1.025,0.116,1.025,0.116 c2.39,5.976,1.521,10.643,0.869,12.745c3.726,3.719,6.021,8.607,6.021,14.715C82.682,55.22,82.403,59.039,81.783,61.244z">
@@ -169,8 +183,9 @@
 										</g>
 									</svg></a>
 								<a href="https://www.linkedin.com/in/fcojara506"><svg version="1.1" id="Layer_1"
-										xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" x="0px"
-										y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+										xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"
+										x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100"
+										xml:space="preserve">
 										<path fill-rule="evenodd" clip-rule="evenodd"
 											d="M50,0C22.386,0,0,22.386,0,50s22.386,50,50,50s50-22.386,50-50S77.614,0,50,0z M36.015,75.297c-3.516,0-7.032,0-10.547,0c0-11.204,0-22.408,0-33.612c-0.007-0.111-0.013-0.222,0.079-0.235 c3.489,0,6.98,0,10.469,0C36.015,52.731,36.015,64.014,36.015,75.297z M27.278,35.86c-1.638-1.117-2.936-3.391-2.597-6.061 c0.25-1.976,1.698-3.695,3.227-4.487c0.522-0.27,1.218-0.456,1.968-0.55c3.992-0.507,7.038,2.304,7.005,6.061 C36.841,35.478,31.5,38.739,27.278,35.86z M75.373,75.297c-3.516,0-7.032,0-10.548,0c0-3.786,0-7.798,0-12.123 c0-5.125,0.65-11.008-2.755-12.751c-1.68-0.859-4.045-0.646-5.511,0c-3.838,1.694-3.463,7.074-3.463,12.988c0,4.11,0,8.373,0,11.887 c-3.49,0-6.979,0-10.469,0c0-11.283,0-22.565,0-33.848c3.359,0,6.717,0,10.076,0c0,1.548,0,3.096,0,4.644 c0.373-0.29,0.526-0.747,0.787-1.102c1.764-2.398,4.986-4.378,9.131-4.408c5.217-0.038,8.87,1.764,10.784,5.117 c1.988,3.484,1.968,8.443,1.968,13.854C75.373,64.742,75.373,70.313,75.373,75.297z">
 										</path>
@@ -185,7 +200,7 @@
 
 			</div>
 
-			
+
 
 			<!-- Projects -->
 			<div id="Projects" class="section">
@@ -360,7 +375,7 @@
 					<div class="section-title">Skills</div>
 					<div id="dashboard">
 						<div id="control"></div>
-						<div id="chart" style="position: relative;height:25vw;"></div>
+						<div id="chart" style="min-height: 400px;height: auto;"></div>
 					</div>
 				</div>
 			</div>
@@ -385,12 +400,17 @@
 
 
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
+
 
 	<script type="text/javascript">
 		google.load("visualization", "1", { packages: ["controls"] });
 		google.setOnLoadCallback(drawVisualization);
+
+
+
+
 
 		function drawVisualization() {
 			var container = document.getElementById("dashboard");
@@ -401,17 +421,18 @@
 				containerId: "control",
 				options: {
 					// Filter by the date axis.
-					filterColumnIndex: [3, 4],
+					width: 300,
+					filterColumnIndex: [3],
 					ui: {
-						cssClass: "filter-date",
+						//cssClass: "filter-date",
 						chartOptions: { hAxis: { baselineColor: "none" } },
 						// Display a single series that shows the closing value of the stock.
 						// Thus, this view has two columns: the date (axis) and the stock value (line series).
-						chartView: { columns: [3] },
+						chartView: { columns: [3, 4] },
 					},
 				},
 				// Initial range: 2012-02-09 to 2012-03-20.
-				state: { lowValue: new Date(2015, 3), highValue: new Date(2023, 3) },
+				state: { lowValue: new Date(2015, 3), highValue: new Date(2022, 3) },
 			});
 
 			var options = {
@@ -427,16 +448,14 @@
 				alternatingRowStyle: false,
 				avoidOverlappingGridLines: false,
 				gridlines: { color: "red" },
-				tooltip: { trigger: "none" },
+				tooltip: { trigger: "none" }
 			};
 
 			var chart = new google.visualization.ChartWrapper({
 				chartType: "Timeline",
 				containerId: "chart",
 				options: options,
-				view: {
-					columns: [0, 1, 2, 3, 4],
-				},
+				view: { columns: [0, 1, 2, 3, 4], },
 			});
 
 			var data = new google.visualization.DataTable();
@@ -492,6 +511,8 @@
 			dashboard.bind(control, chart);
 			dashboard.draw(data, options);
 		}
+		$(window).resize(function () { drawVisualization(); });
+		$(window).resize(function () { control; });
 	</script>
 
 	<script type="text/javascript">
