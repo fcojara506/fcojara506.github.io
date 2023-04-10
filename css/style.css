@@ -9,6 +9,8 @@
   --text-light: #6b6f76;
   --margin-left: 4.5em;
   --margin-right: 3em;
+  --min-screen-width: 768px;
+  --max-screen-width: 1250px;
 }
 
 html {
@@ -146,12 +148,13 @@ body {
 }
 
 
-.site-header{
-	overflow: hidden;
-	background-color: #333;
-	position: fixed; /* Set the navbar to fixed position */
-	top: 0; /* Position the navbar at the top of the page */
-	width: 100%; /* Full width */
+.site-header {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Add a z-index to ensure the header stays on top */
 }
 
 .site-header,
@@ -252,6 +255,23 @@ header .wrapper {
   font-size: 0.83em;
 }
 
+.colab-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+.colab-link {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
 .project-container {
   margin-top: 2em;
   display: inline-block;
@@ -259,21 +279,27 @@ header .wrapper {
 
 .project {
   float: left;
-  width: calc((100% - 1em) / 2);
+  width: calc((100% - 1em) );
   border-radius: 2px;
   margin-right: 1em;
   margin-bottom: 1em;
   opacity: 0;
 }
 
-.project:nth-child(2n + 2) {
+/**.project:nth-child(2n + 2) {
   margin-right: 0;
 }
+**/
 
 .project:nth-last-child(-n + 2) {
   margin-bottom: 0;
 }
 
+
+.project-separator {
+  border: 0.5px solid #ccc;
+  margin: 20px 0;
+}
 /**   https://codepen.io/nxworld/pen/ZYNOBZ **/
 .project img {
   -webkit-transform: scale(1);
@@ -283,8 +309,8 @@ header .wrapper {
 }
 
 .project img:hover {
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
+  -webkit-transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .project img.wide {
@@ -325,23 +351,13 @@ textarea {
 
 
 
-
-
-
-
-/* a.td-navbar-item.is-active,
-a.td-navbar-item:focus,
-a.td-navbar-item:focus-within,
-a.td-navbar-item:hover {
-  color: inherit;
-  background-color: unset;
-} */
-
 .td-navbar {
   position: relative;
   color: var(--text);
   background-color: var(--main-bg-color);
-} 
+  z-index: 1000;
+}
+
 .td-navbar-item {
   display: block;
   flex-shrink: 0;
@@ -538,20 +554,20 @@ a .button_sleek1,
 .yk4y7v0:hover ._1untytp0 {
   text-decoration: underline;
 }
+
+
 ._1untytp0 span:not(:empty),
 ._1untytp0:not(:empty) {
   font-size: var(--font-size);
   line-height: var(--line-height);
 }
+
+
+
+
 ._1untytp0 span:empty:after,
 ._1untytp0:empty:after {
   content: "\feff";
-}
-._1untytp0 code {
-  background-color: var(--background-highlight);
-  color: var(--text-light);
-  padding: 0.25em 0.5em;
-  font-size: 0.875em;
 }
 
 .filter-date {
@@ -578,18 +594,22 @@ a .button_sleek1,
 }
 
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 800px) {
   ._1untytp0 span:not(:empty),
   ._1untytp0:not(:empty) {
     font-size: var(--mobile-font-size);
     line-height: var(--mobile-line-height);
-  }
+
+
+}
 }
 
 
 
-@media only screen and (max-width: 1250px) {
 
+
+@media only screen and (min-width: 768px) and (max-width: 1250px) {
   .typedream.content.td-navbar-item-dropdown-menu {
     height: 0;
     overflow-y: hidden;
@@ -600,10 +620,11 @@ a .button_sleek1,
     display: none;
   }
 
+
   .td-navbar-mobile {
     position: absolute;
     left: 0;
-    right: 0;
+    right: 100;
     overflow-y: auto;
     box-shadow: 0 8px 16px hsla(0, 0%, 4%, 0.1);
     padding-top: 0.5rem;
@@ -613,6 +634,7 @@ a .button_sleek1,
     flex-shrink: 1;
     white-space: nowrap;
     overflow: hidden;
+    justify-content: flex-end;
   }
   .td-navbar-item[data-state="open"] .icon-chevron-down {
     transform: rotate(-180deg);
@@ -621,10 +643,7 @@ a .button_sleek1,
     .typedream.content.td-navbar-item-dropdown-menu {
     height: auto;
   }
-
-
 }
-
 
 
 
@@ -745,20 +764,30 @@ a .button_sleek1,
     padding: 0.75em 0 0 0;
   }
 
-  .project {
-    float: left;
-    width: Calc((100% - 1em) / 2);
-    border-radius: 2px;
-    margin-right: 1em !important;
-    margin-bottom: 1em !important;
-    opacity: 0;
+
+}
+
+
+/* Add CSS styles for mobile navigation */
+@media (max-width: 1250px) {
+  .td-navbar-middle {
+    display: none;
   }
 
-  .project:nth-child(2n + 2) {
-    margin-right: 0 !important;
+  .td-navbar-middle.is-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    background-color: var(--main-bg-color);
+  
+    width: 100%;
+    padding: 10px 0;
+    align-items: center;
   }
 
-  .project:nth-last-child(-n + 2) {
-    margin-bottom: 0 !important;
+  .td-navbar-middle a {
+    padding: 10px;
   }
 }
+
