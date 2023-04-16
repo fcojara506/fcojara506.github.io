@@ -115,16 +115,14 @@
     }
 
     .wrapper {
-  
+        max-width: -webkit-calc(1050px - (30px * 2));
+        max-width: calc(1050px - (30px * 2));
         margin-right: auto;
         margin-left: auto;
         padding-right: 30px;
         padding-left: 30px;
     }
-    .wrapper{
-        max-width: -webkit-calc(1050px - (25px * 2));
-        max-width: calc(1050px - (25px * 2));
-    }
+  
 
     @media screen and (max-width: 1050px) {
         .wrapper {
