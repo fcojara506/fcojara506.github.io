@@ -10,7 +10,7 @@
   --margin-left: 4.5em;
   --margin-right: 3em;
   --min-screen-width: 768px;
-  --max-screen-width: 1250px;
+  --max-screen-width: 1150px;
 }
 
 html {
@@ -604,7 +604,7 @@ a .button_sleek1,
 
 
 
-@media only screen and (min-width: 768px) and (max-width: 1250px) {
+@media only screen and (min-width: var(--min-screen-width)) and (max-width: var(--max-screen-width)) {
   .typedream.content.td-navbar-item-dropdown-menu {
     height: 0;
     overflow-y: hidden;
@@ -643,7 +643,7 @@ a .button_sleek1,
 
 
 
-@media only screen and (min-width: 1250px) {
+@media only screen and (min-width: var(--max-screen-width)) {
   .td-navbar {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -704,7 +704,7 @@ a .button_sleek1,
 
 
 
-@media (max-device-width: 1024px) and (min-device-height: 768px) and (orientation: landscape) {
+@media (max-device-width: 1024px) and (min-device-height: var(--min-screen-width)) and (orientation: landscape) {
   .td-navbar-item .td-navbar-item-dropdown {
     pointer-events: none;
     cursor: default;
@@ -717,7 +717,7 @@ a .button_sleek1,
 
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: var(--min-screen-width)) {
   html {
     min-width: 320px;
   }
@@ -764,7 +764,7 @@ a .button_sleek1,
 
 
 /* Add CSS styles for mobile navigation */
-@media (max-width: 1250px) {
+@media (max-width: var(--max-screen-width)) {
   .td-navbar-middle {
     display: none;
   }
