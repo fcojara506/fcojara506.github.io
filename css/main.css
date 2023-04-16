@@ -121,9 +121,9 @@
         padding-right: 30px;
         padding-left: 30px;
     }
-    .wrapper2{
-        max-width: -webkit-calc(1050px - (30px * 2));
-        max-width: calc(1050px - (30px * 2));
+    .wrapper{
+        max-width: -webkit-calc(1050px - (25px * 2));
+        max-width: calc(1050px - (25px * 2));
     }
 
     @media screen and (max-width: 1050px) {
@@ -267,7 +267,7 @@
 
   
     .page-content2 {
-        padding: 30px 0;
+        padding: 25px 0;
     }
 
     .page-heading {
