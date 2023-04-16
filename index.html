@@ -275,19 +275,7 @@ layout: default
         </div>
       </div>
 
-      <div class="footer" style="
-            text-align: center;
-            font-size: 0.83em;
-            padding-left: 5.25em;
-            padding-bottom: 0.75em;
-          ">
-        © 2017
-        <script>
-          new Date().getFullYear() > 2010 &&
-            document.write("- " + new Date().getFullYear());
-        </script>
-        all is well
-      </div>
+
       
     </div>
   </div>
@@ -433,7 +421,7 @@ layout: default
       /* Every time the window is scrolled ... */
       $(window).scroll(function () {
         /* Check the location of each desired element */
-        $(".horizontal-bar-chart").each(function (i) {
+        $(".project").each(function (i) {
           var top_of_object = $(this).offset().top;
           var bottom_of_window = $(window).scrollTop() + $(window).height();
 
