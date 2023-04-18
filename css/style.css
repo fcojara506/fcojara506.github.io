@@ -135,11 +135,11 @@ body {
 }
 
 .section {
-  padding-top: 3em;
-  padding-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   margin-top: 0.5em;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  box-shadow: 1px 3px 10px rgba(10, 100, 250, 0.3);
+  border-radius: 7px;
 }
 
 
