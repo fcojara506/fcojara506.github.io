@@ -189,6 +189,7 @@ header .wrapper {
   /*margin-left: var(--margin-left);*/
   line-height: 1;
   margin-top: 0.25em;
+  font-family: 'DM Mono', monospace;
 }
 
 .text-box {
@@ -786,3 +787,6 @@ a .button_sleek1,
   }
 }
 
+.font-mono {
+  font-family: 'DM Mono', monospace;
+}
