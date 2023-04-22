@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOES Satellite Animation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             background-color: black;
@@ -13,13 +11,76 @@
         .loading-message{
             color:white;
         }
+        #animationGenerationProgress {
+	margin: 6px;
+	background-color: #acacac;
+	height: 18px;
+	width: 60%;
+}
+
+#animationGenerationProgress progress {
+	background-color: #acacac !important;
+	border: 0;
+	width: 80%;
+	height: 18px;
+	border-radius: 3px;
+}
+
+#animationGenerationProgress progress::-webkit-progress-bar {
+	background-color: #acacac !important;
+	border-radius: 3px;
+}
+
+#animationGenerationProgress progress::-webkit-progress-value {
+	background: #cdeb8e !important;
+	background: -moz-linear-gradient(top,  #cdeb8e 0%, #a5c956 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cdeb8e), color-stop(100%,#a5c956));
+	background: -webkit-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%);
+	background: -o-linear-gradient(top, #cdeb8e 0%,#a5c956 100%);
+	background: -ms-linear-gradient(top, #cdeb8e 0%,#a5c956 100%);
+	background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=0 );
+	border-radius: 3px;
+}
+
+#animationGenerationProgress progress::-moz-progress-bar {
+	background: #cdeb8e !important;
+	background: -moz-linear-gradient(top, #cdeb8e 0%, #a5c956 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cdeb8e), color-stop(100%,#a5c956));
+	background: -webkit-linear-gradient(top, #cdeb8e 0%,#a5c956 100%);
+	background: -o-linear-gradient(top, #cdeb8e 0%,#a5c956 100%);
+	background: -ms-linear-gradient(top, #cdeb8e 0%,#a5c956 100%);
+	background: linear-gradient(to bottom, #cdeb8e 0%,#a5c956 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=0 );
+	border-radius: 3px;
+}
+
+#animationGenerationProgress .progress-value {
+	padding: 0px 5px;
+	line-height: 20px;
+	margin-left: 5px;
+	font-size: .8em;
+	color: #555;
+	height: 18px;
+	float: right;
+}
+
     </style>
+   <script async="" src="assets/js/STARGIFAnimator.js"></script>
 </head>
 
 <body>
     <div id="image-container"></div>
-    <div id="loading-message">Loading animation, please wait...</div>
+    <div id="loading-message" class="loading-message">Loading animation, please wait...</div>
+    <div id="image-container"></div>
+    <div class="btn-group" style="visibility: visible;">
+        <a id="downloadGIF" href="javascript:void(0);" class="btn btn-primary btn-sm" title="Download GIF animation" aria-label="Download GIF animation">Download</a>
+    </div>
+    <progress id="animationGenerationProgress" value="0" max="1" style="width: 100%;"></progress>
+
+
     <script>
+        let loadedImages = [];
         const baseURL = "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/FD/GEOCOLOR/";
 
         function padZeroes(num, size) {
@@ -67,7 +128,7 @@
 
             for (let i = 0; i < 10; i++) {
                 const doy = padZeroes(currentDoy-i, 3);
-                for (let minute = 60 * 24; minute >0 ; minute -= 60) {
+                for (let minute = 60 * 24; minute >0 ; minute -= 120) {
                     const hour = Math.floor(minute / 60);
                     const min = minute % 60;
 
@@ -98,7 +159,7 @@
 
 
         function preloadImages(imageURLs) {
-    const loadedImages = [];
+   
     let imagesLoaded = 0;
 
     return new Promise((resolve, reject) => {
@@ -134,12 +195,66 @@ function displayAnimation(loadedImages) {
         currentImage = (currentImage - 1 + loadedImages.length) % loadedImages.length;
         const nextImg = loadedImages[currentImage];
         img.src = nextImg.src;
-    }, 1000); // Change this value to adjust the animation speed
+    }, 200); // Change this value to adjust the animation speed
 }
+
+// Update progress for GIF creation
+//function progressUpdaterPercent(percentage) {
+//    document.getElementById("animationGenerationProgress").value = percentage;
+//}
+
+function progressUpdaterPercent(newFramesProcessed) {
+	// console.log("In progress updater");
+	var progressMeter = document.getElementById('animationGenerationProgress');
+	if (progressMeter == null) {
+		console.log("progress meter w/ appropriate ID unavailable for: "+newFramesProcessed);
+	} else {
+	//  add new frame(s) processed
+	var currentStatus = progressMeter.value;
+	// console.log("progress meter: from  " +currentStatus +" add "+newFramesProcessed);
+	//progressMeter.value = currentStatus + newFramesProcessed;
+	progressMeter.value = newFramesProcessed;
+	//progressMeter.innerHTML = currentStatus + newFramesProcessed;
+	progressMeter.innerHTML = newFramesProcessed;
+  }
+}
+
+// Download the GIF
+document.getElementById("downloadGIF").addEventListener("click", function () {
+    if (!loadedImages || loadedImages.length === 0) {
+        alert("No images found for the animation.");
+        return;
+    }
+
+    gifshot.createGIF({
+        'delay': 100,
+        'numWorkers': 4,
+        'images': loadedImages,
+        'gifWidth': 678,
+        'gifHeight': 678,
+        'progressCallback': progressUpdaterPercent
+    }, function (obj) {
+        if (!obj.error) {
+            const image = obj.image;
+            const downloadFile = "assets/img/daily_timelapse.gif";
+            const anchor = document.createElement("a");
+            anchor.download = downloadFile;
+            anchor.href = window.URL.createObjectURL(image);
+            anchor.click();
+            window.URL.revokeObjectURL(anchor.href);
+        } else {
+            console.error("Error creating GIF:", obj.error);
+        }
+    });
+});
+
 
 function displayLastImage(imageURL) {
             const img = new Image();
-            img.src = imageURL;
+            //img.src = imageURL;
+            //img.src = "assets/img/20231121600_GOES16-ABI-FD-GEOCOLOR-1808x1808.jpg";
+            img.src = "assets/img/G16_fd_GEOCOLOR_240fr_20230422-1331.gif";
+
             img.id = "last-image";
             img.style.width = "50%";
             img.style.height = "auto";
@@ -153,11 +268,12 @@ function displayLastImage(imageURL) {
             document.getElementById("last-image").style.display = "none";
         }
 
-        getLastImageURL().then(lastImageURL => {
-        displayLastImage(lastImageURL);
-        console.log("Last available image URL:", lastImageURL);
+// getLastImageURL().then(lastImageURL => {
+//     displayLastImage(lastImageURL);
+//     console.log("Last available image URL:", lastImageURL);
+displayLastImage();
 
-        getImageURLs(10).then(imageURLs => {
+        getImageURLs(5).then(imageURLs => {
             if (imageURLs.length > 0) {
                 preloadImages(imageURLs).then(loadedImages => {
                     if (loadedImages.length > 0) {
@@ -172,7 +288,7 @@ function displayLastImage(imageURL) {
                 console.error('No images found.');
             }
         });
-    });
+    
 </script>
 </body>
 
