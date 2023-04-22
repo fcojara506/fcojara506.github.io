@@ -110,6 +110,10 @@ body {
 
 }
 
+.socmed-icons a:first-child {
+  margin-right: 1cm;
+}
+
 .socmed-icons a svg:hover {
   -ms-transform: translateY(-5px);
   /* IE 9 */
