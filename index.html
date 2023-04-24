@@ -294,7 +294,7 @@ layout: default
 
 
 <script type="text/javascript">
-  google.load("visualization", "1", { packages: ["controls"] });
+  google.charts.load('current', {'packages':['corechart', 'controls']});
   google.setOnLoadCallback(drawVisualization);
 
   function calculateChartHeight(data, min_height, row_height, header_height) {
@@ -318,19 +318,20 @@ data.addColumn({ type: "date", id: "End" });
 data.addRows([
   ["University", "Java", new Date(2010, 3), new Date(2011, 3)],
   ["University", "Matlab", new Date(2011, 1), new Date(2018, 3)],
-  ["Work", "R", "l2", new Date(2018, 3), new Date(2023, 3)],
+  ["Work", "Matlab", new Date(2017, 7), new Date(2018, 12)],
+  ["Work", "R", new Date(2018, 3), new Date(2023, 3)],
   ["Work", "Python", new Date(2018, 3), new Date(2022, 7)],
   ["Projects", "SQL", new Date(2021, 3), new Date(2021, 7)],
   ["Spatial","Quantum GIS",new Date(2015, 3),new Date(2023, 3),],
-  ["Spatial", "GRASS GIS",  new Date(2015, 3), new Date(2023, 3)],
-  ["Hydrological", "CRHM",  new Date(2016, 3), new Date(2017, 7)],
-  ["Hydrological", "CRHM",  new Date(2019, 3), new Date(2019, 6)],
-  ["Hydrological", "CRHM",  new Date(2020, 12), new Date(2021, 2)],
-  ["Hydrological", "CRHM",  new Date(2022, 8), new Date(2022, 12)],
-  ["Hydrological", "WEAP",  new Date(2017, 7), new Date(2019, 2)],
-  ["Hydrological", "GRxJ",  new Date(2020, 3), new Date(2020, 11)],
-  ["Hydrological","HBV light",new Date(2018, 1),new Date(2018, 7),],
-  ["Projects", "Arduino",  new Date(2019, 11), new Date(2019, 12)],
+  ["Spatial", "GRASS GIS", new Date(2015, 3), new Date(2023, 3)],
+  ["Hydrology", "CRHM", new Date(2016, 3), new Date(2017, 7)],
+  ["Hydrology", "CRHM", new Date(2019, 3), new Date(2019, 6)],
+  ["Hydrology", "CRHM", new Date(2020, 12), new Date(2021, 2)],
+  ["Hydrology", "CRHM", new Date(2022, 8), new Date(2022, 12)],
+  ["Hydrology", "WEAP", new Date(2017, 7), new Date(2019, 2)],
+  ["Hydrology", "GRxJ", new Date(2020, 3), new Date(2020, 11)],
+  ["Hydrology","HBV light",new Date(2018, 1),new Date(2018, 7),],
+  ["Projects", "Arduino", new Date(2019, 11), new Date(2019, 12)],
   ["Projects","Google Earth Engine",new Date(2020, 7),new Date(2021, 6),],
 ]);
 
@@ -340,70 +341,48 @@ data.addRows([
       options: {
         // Filter by the date axis.
         //width: 300,
-        filterColumnIndex: [2],
+        filterColumnIndex: [3],
         ui: {
-          //cssClass: "filter-date",
-          chartOptions: { hAxis: { baselineColor: "none" } },
+          cssClass: "filter-date",
+          //chartOptions: { hAxis: { baselineColor: "none" } },
           // Display a single series that shows the closing value of the stock.
           // Thus, this view has two columns: the date (axis) and the stock value (line series).
           chartView: { columns: [2, 3] },
         },
       },
       // Initial range: 2012-02-09 to 2012-03-20.
-      state: { lowValue: new Date(2015, 3), highValue: new Date(2022, 3) },
+      state: { lowValue: new Date(2017, 3), highValue: new Date(2023, 3) },
     });
 
+
+    
+
     var options = {
-      height: calculateChartHeight(data, 1, 25, 2),
+      height: calculateChartHeight(data, 5, 24, 2),
       timeline: {
         groupByRowLabel: true,
         colorByRowLabel: true,
-        showRowLabels: true,
+        //showRowLabels: false,
+        //showColumbLabels:true
+
       },
       hAxis: {
-        viewWindowMode: "pretty",
+        //viewWindowMode: "pretty",
       },
       backgroundColor: "#fefaf3",
       alternatingRowStyle: true,
       avoidOverlappingGridLines: true,
       gridlines: { color: "red" },
-      //tooltip: { trigger: "none" },
+      tooltip: {isHtml:false}//{ trigger: "none" },
     };
 
     var chart = new google.visualization.ChartWrapper({
       chartType: "Timeline",
       containerId: "chart",
       options: options,
-      view: { columns: [0, 1, 2, 3, 4] },
+      //view: { columns: [0, 1, 2, 3] },
     });
-    /*
-    google.visualization.events.addListener(
-      dashboard,
-      "ready",
-      function () {
-        // find <rect> elements
-        var rects = container.getElementsByTagName("rect");
-        Array.prototype.forEach.call(rects, function (rect) {
-          if (rect.getAttribute("stroke") === "#9a9a9a") {
-            // remove border
-            rect.setAttribute("stroke-width", "0");
-          }
-        });
-
-        // find <path> elements
-        var paths = container.getElementsByTagName("path");
-        Array.prototype.forEach.call(paths, function (path) {
-          if (
-            path.getAttribute("stroke") === "#ffffff" ||
-            path.getAttribute("stroke") === "#e6e6e6"
-          ) {
-            // remove border
-            path.setAttribute("stroke-width", "0.5");
-          }
-        });
-      }
-    );
-    */
+   
 
     dashboard.bind(control, chart);
     dashboard.draw(data, options);
@@ -458,8 +437,10 @@ data.addRows([
   });
 </script>
 
-
-
-
-
-</body>
+<script>
+  function toggleMobileMenu(burger) {
+    const navItems = document.querySelector(".nav-items");
+    navItems.classList.toggle("is-active");
+    burger.classList.toggle("is-active");
+  }
+</script>
