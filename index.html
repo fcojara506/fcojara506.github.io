@@ -328,7 +328,7 @@ data.addRows([
       alternatingRowStyle: true,
       avoidOverlappingGridLines: true,
       gridlines: { color: "red" },
-      tooltip: { trigger: "none" },
+      //tooltip: { trigger: "none" },
     };
 
     var chart = new google.visualization.ChartWrapper({
@@ -337,7 +337,7 @@ data.addRows([
       options: options,
       view: { columns: [0, 1, 2, 3, 4] },
     });
-
+    /*
     google.visualization.events.addListener(
       dashboard,
       "ready",
@@ -364,6 +364,7 @@ data.addRows([
         });
       }
     );
+    */
 
     dashboard.bind(control, chart);
     dashboard.draw(data, options);
