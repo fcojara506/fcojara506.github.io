@@ -813,7 +813,7 @@ a .button_sleek1,
   font-family: 'DM Mono', monospace;
 }
 
-/* Add media queries for mobile devices */
+
 @media screen and (max-width: 767px) {
   .section-content {
     margin-left: var(--mobile-margin);
@@ -855,6 +855,16 @@ a .button_sleek1,
   .td-navbar-item svg {
     right: 15px;
   }
+
+  .project-container {
+    flex-direction: column;
+  }
+
+  .project {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
 }
 
 #Skills {

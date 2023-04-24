@@ -272,7 +272,7 @@ layout: default
 
 data.addColumn({ type: "string", id: "TestAction" });
 data.addColumn({ type: "string", id: "Name" });
-data.addColumn({ type: "string", role: "tooltip" });
+//data.addColumn({ type: "string", role: "tooltip" });
 data.addColumn({ type: "date", id: "Start" });
 data.addColumn({ type: "date", id: "End" });
 
@@ -301,13 +301,13 @@ data.addRows([
       options: {
         // Filter by the date axis.
         //width: 300,
-        filterColumnIndex: [3],
+        filterColumnIndex: [2],
         ui: {
           //cssClass: "filter-date",
           chartOptions: { hAxis: { baselineColor: "none" } },
           // Display a single series that shows the closing value of the stock.
           // Thus, this view has two columns: the date (axis) and the stock value (line series).
-          chartView: { columns: [3, 4] },
+          chartView: { columns: [2, 3] },
         },
       },
       // Initial range: 2012-02-09 to 2012-03-20.
