@@ -843,3 +843,23 @@ a .button_sleek1,
     right: 15px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  /* Adjust the style for the skills section */
+  #Skills .section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust the style for the control element */
+  #control {
+    margin-bottom: 20px;
+  }
+
+  /* Adjust the style for the chart element */
+  #chart {
+    width: 100%;
+    max-width: 100%;
+  }
+}
