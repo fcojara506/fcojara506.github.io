@@ -276,6 +276,23 @@ header .wrapper {
   text-decoration: none;
 }
 
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.project {
+  width: 48%;
+  box-sizing: border-box;
+}
+
+.project-separator {
+  display: none;
+}
+
+/*
 .project-container {
   margin-top: 2em;
   display: inline-block;
@@ -289,7 +306,7 @@ header .wrapper {
   margin-bottom: 1em;
   opacity: 0;
 }
-
+*/
 /**.project:nth-child(2n + 2) {
   margin-right: 0;
 }
@@ -351,9 +368,6 @@ textarea {
 textarea {
   resize: vertical;
 }
-
-
-
 
 .td-navbar {
   position: relative;
@@ -853,17 +867,3 @@ a .button_sleek1,
   max-width: 1000px;
 }
 
-.project-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.project {
-  width: 48%;
-  box-sizing: border-box;
-}
-
-.project-separator {
-  display: none;
-}
