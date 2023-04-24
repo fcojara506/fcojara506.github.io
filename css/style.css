@@ -304,6 +304,7 @@ header .wrapper {
 .project-container {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2em;
   justify-content: space-between;
 }
 
@@ -312,11 +313,13 @@ header .wrapper {
   box-sizing: border-box;
 }
 
+
+
+/*
 .project-separator {
   display: none;
 }
 
-/*
 .project-container {
   margin-top: 2em;
   display: inline-block;

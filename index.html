@@ -119,6 +119,7 @@ layout: default
 
         <div class="section-title">Projects</div>
         <div class="project-container">
+
           <!-- Deep NLP for hate speech detection -->
           <div class="project">
             <h3>Network analysis</h3>
@@ -158,6 +159,8 @@ layout: default
               <span class="colab-link">View code on Colab</span>
             </a>
           </div>
+
+          
 
           <div class="project">
             <h3>Network analysis</h3>
@@ -342,17 +345,13 @@ data.addRows([
       containerId: "control",
       options: {
         // Filter by the date axis.
-        //width: 300,
         filterColumnIndex: [3],
         ui: {
           cssClass: "filter-date",
-          //chartOptions: { hAxis: { baselineColor: "none" } },
-          // Display a single series that shows the closing value of the stock.
-          // Thus, this view has two columns: the date (axis) and the stock value (line series).
           chartView: { columns: [2, 3] },
         },
       },
-      // Initial range: 2012-02-09 to 2012-03-20.
+      // Initial range: 2018 to present
       state: { lowValue: new Date(2018, 4, 21), highValue: new Date() },
     });
 
@@ -391,12 +390,12 @@ data.addRows([
   }
   $(window).resize(function () {
     drawVisualization();
-  });
-  $(window).resize(function () {
     control;
   });
+
 </script>
 
+/*
 <script type="text/javascript">
   // skill animation when scrolled to
   $(document).ready(function () {
@@ -437,12 +436,4 @@ data.addRows([
       timeProjects += 300;
     });
   });
-</script>
-
-<script>
-  function toggleMobileMenu(burger) {
-    const navItems = document.querySelector(".nav-items");
-    navItems.classList.toggle("is-active");
-    burger.classList.toggle("is-active");
-  }
 </script>
