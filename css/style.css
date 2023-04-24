@@ -13,6 +13,9 @@
   --min-screen-width: 768px;
   --max-screen-width: 1250px;
 }
+/*<link rel="shortcut icon" href="assets/img/head_image.png" />?*/
+/*<link rel="shortcut icon" href="assets/img/head_image.png" />*/
+/*<<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />*/
 
 html {
   scroll-behavior: smooth;
