@@ -282,13 +282,7 @@ data.addRows([
   ["Work", "R", "l2", new Date(2018, 3), new Date(2023, 3)],
   ["Work", "Python", "l3", new Date(2018, 3), new Date(2022, 7)],
   ["Projects", "SQL", "l3", new Date(2021, 3), new Date(2021, 7)],
-  [
-    "Spatial",
-    "Quantum GIS",
-    "l3",
-    new Date(2015, 3),
-    new Date(2023, 3),
-  ],
+  ["Spatial","Quantum GIS","l3",new Date(2015, 3),new Date(2023, 3),],
   ["Spatial", "GRASS GIS", "l3", new Date(2015, 3), new Date(2023, 3)],
   ["Hydrological", "CRHM", "l3", new Date(2016, 3), new Date(2017, 7)],
   ["Hydrological", "CRHM", "l3", new Date(2019, 3), new Date(2019, 6)],
@@ -296,21 +290,9 @@ data.addRows([
   ["Hydrological", "CRHM", "l3", new Date(2022, 8), new Date(2022, 12)],
   ["Hydrological", "WEAP", "l3", new Date(2017, 7), new Date(2019, 2)],
   ["Hydrological", "GRxJ", "l3", new Date(2020, 3), new Date(2020, 11)],
-  [
-    "Hydrological",
-    "HBV light",
-    "l3",
-    new Date(2018, 1),
-    new Date(2018, 7),
-  ],
+  ["Hydrological","HBV light","l3",new Date(2018, 1),new Date(2018, 7),],
   ["Projects", "Arduino", "l3", new Date(2019, 11), new Date(2019, 12)],
-  [
-    "Projects",
-    "Google Earth Engine",
-    "l3",
-    new Date(2020, 7),
-    new Date(2021, 6),
-  ],
+  ["Projects","Google Earth Engine","l3",new Date(2020, 7),new Date(2021, 6),],
 ]);
 
     var control = new google.visualization.ControlWrapper({
@@ -333,7 +315,7 @@ data.addRows([
     });
 
     var options = {
-      height: calculateChartHeight(data, 300, 40, 30),
+      height: calculateChartHeight(data, 25, 30, 20),
       timeline: {
         groupByRowLabel: true,
         colorByRowLabel: true,
@@ -355,7 +337,7 @@ data.addRows([
       options: options,
       view: { columns: [0, 1, 2, 3, 4] },
     });
-    
+
     google.visualization.events.addListener(
       dashboard,
       "ready",
