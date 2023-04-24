@@ -258,6 +258,12 @@ layout: default
   google.load("visualization", "1", { packages: ["controls"] });
   google.setOnLoadCallback(drawVisualization);
 
+  function calculateChartHeight(data, min_height, row_height, header_height) {
+  var numRows = data.getNumberOfRows();
+  var chartHeight = numRows * row_height + header_height;
+  return chartHeight > min_height ? chartHeight : min_height;
+}
+
   function drawVisualization() {
     var container = document.getElementById("dashboard");
     var dashboard = new google.visualization.Dashboard(container);
@@ -282,6 +288,7 @@ layout: default
     });
 
     var options = {
+      height: calculateChartHeight(data, 300, 40, 30),
       timeline: {
         groupByRowLabel: true,
         colorByRowLabel: true,
