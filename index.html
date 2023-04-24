@@ -315,7 +315,7 @@ data.addRows([
     });
 
     var options = {
-      height: calculateChartHeight(data, 25, 30, 20),
+      height: calculateChartHeight(data, 10, 28, 5),
       timeline: {
         groupByRowLabel: true,
         colorByRowLabel: true,
@@ -325,8 +325,8 @@ data.addRows([
         viewWindowMode: "pretty",
       },
       backgroundColor: "#fefaf3",
-      alternatingRowStyle: false,
-      avoidOverlappingGridLines: false,
+      alternatingRowStyle: true,
+      avoidOverlappingGridLines: true,
       gridlines: { color: "red" },
       tooltip: { trigger: "none" },
     };
