@@ -68,10 +68,10 @@
     <div id="image-container"></div>
     <div class="btn-group" style="visibility: visible;">
         <a id="downloadGIF" href="javascript:void(0);" class="btn btn-primary btn-sm" title="Download GIF animation"
-            aria-label="Download GIF animation" style="display: none;">Download</a>
+            aria-label="Download GIF animation">Download</a>
     </div>
 
-    <progress id="animationGenerationProgress" value="0" max="1" style="width: 50%; display: none;"></progress>
+    <progress id="animationGenerationProgress" value="0" max="1" style="width: 50%;"></progress>
 
 
     <script>
@@ -121,7 +121,7 @@
             const yyyy = now.getUTCFullYear();
             const imageURLs = [];
 
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 2; i++) {
                 const doy = padZeroes(currentDoy - i, 3);
                 for (let minute = 60 * 24; minute > 0; minute -= 120) {
                     const hour = Math.floor(minute / 60);

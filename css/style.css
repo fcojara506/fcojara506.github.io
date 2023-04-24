@@ -9,6 +9,7 @@
   --text-light: #6b6f76;
   --margin-left: 4.5em;
   --margin-right: 3em;
+  --mobile-margin: 1em;
   --min-screen-width: 768px;
   --max-screen-width: 1250px;
 }
@@ -793,4 +794,52 @@ a .button_sleek1,
 
 .font-mono {
   font-family: 'DM Mono', monospace;
+}
+
+/* Add media queries for mobile devices */
+@media screen and (max-width: 767px) {
+  .section-content {
+    margin-left: var(--mobile-margin);
+    margin-right: var(--mobile-margin);
+  }
+
+  .column {
+    float: none;
+    width: 100%;
+  }
+
+  .list-head {
+    float: none;
+    width: 100%;
+  }
+
+  .list-description {
+    margin-left: 0;
+    padding-left: 0.75em;
+  }
+
+  .project {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .socmed-icons a {
+    margin-right: 0.5cm;
+  }
+
+  .socmed-icons a svg {
+    height: 3em;
+  }
+
+  .wrapper {
+    padding-right: 2em;
+  }
+
+  .td-navbar-brand-logo {
+    display: none;
+  }
+
+  .td-navbar-item svg {
+    right: 15px;
+  }
 }
