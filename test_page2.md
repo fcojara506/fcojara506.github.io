@@ -2,7 +2,6 @@
 layout: pages
 title: COM interface tutorial
 categories: ['tutorials', 'AutoHotkey', 'AutoHotkey_L', 'IronAHK', 'COM']
-permalink: '/tutorials/COM-Interfaces.html'
 ---
 
 ## Introduction
