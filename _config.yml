@@ -9,8 +9,3 @@ github_username:  fcojara506
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:title
-
-highlighter: rouge
-kramdown:
-    input: GFM
-    syntax_highlighter: rouge
