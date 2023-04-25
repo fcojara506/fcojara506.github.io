@@ -91,28 +91,7 @@
         margin-bottom: 0;
     }
 
-    pre,
-    code {
-        font-size: 15px;
-        border: 1px solid #e8e8e8;
-        border-radius: 3px;
-        background-color: #eef;
-    }
 
-    code {
-        padding: 1px 5px;
-    }
-
-    pre {
-        padding: 8px 12px;
-        overflow-x: scroll;
-    }
-
-    pre>code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
 
     .wrapper {
         max-width: -webkit-calc(1200px - (10%));
@@ -158,23 +137,6 @@
     .site-title svg:hover {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
-    }
-
-    .ring {
-        width: 69px;
-        height: 69px;
-        border-radius: 50%;
-        position: absolute;
-        background-color: transparent;
-        border: 3px black solid;
-        opacity: 0;
-    }
-
-    .ring:focus {
-        -webkit-animation-name: ripple;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-duration: 0.8s;
-        -webkit-animation-direction: normal;
     }
 
     @-webkit-keyframes ripple {
