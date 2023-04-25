@@ -6,7 +6,8 @@ url: "localhost:4000"
 github_username:  fcojara506
 
 # Build settings
+include:
+  - _pages
+
 markdown: kramdown
 highlighter: rouge
-    input: GFM
-permalink: /:year/:month/:title
