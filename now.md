@@ -1,6 +1,7 @@
 ---
 title: Now
-layout: default
+layout: pages
 ---
-Currently I'm making some project to show off my abilities on data science.
+Currently I'm making several projects to show off my abilities on data science and visualisation.
+
 

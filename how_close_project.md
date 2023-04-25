@@ -1,5 +1,7 @@
 ---
 title: How close?
-layout: default
+layout: pages
 ---
-Project about How is the nearest destinations.
+
+Project about the distance to the nearest destinations in different cities of the UK.
+

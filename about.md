@@ -1,5 +1,8 @@
 ---
 title: About
-layout: default
+layout: pages
 ---
- hola soy francisco
+ Hola!
+ My name is Francisco
+
+
