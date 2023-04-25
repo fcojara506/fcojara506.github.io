@@ -3,11 +3,10 @@ title: Francisco Jara
 email: fcojara506@gmail.com
 description: website
 url: "localhost:4000" 
-twitter_username: fcojara506
 github_username:  fcojara506
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
     input: GFM
-#permalink: /:year/:month/:title
+permalink: /:year/:month/:title
