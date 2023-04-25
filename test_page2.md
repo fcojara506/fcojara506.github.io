@@ -5,10 +5,8 @@ categories: ['tutorials', 'AutoHotkey', 'AutoHotkey_L', 'IronAHK', 'COM']
 permalink: '/tutorials/COM-Interfaces.html'
 
 ahk_versions: [['AutoHotkey', false], ['AutoHotkey_L', true], ['AutoHotkey v2', true]]
-required_os: 'None'
-skills: 'medium / high'
 
-css_files: ['tutorial', 'syntax']
+skills: 'medium / high'
 ---
 
 ## Introduction
