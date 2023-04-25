@@ -89,4 +89,3 @@ function sayHello(name) {
 1. [GitHub Syntax Highlighting Doc](https://help.github.com/articles/using-syntax-highlighting-on-github-pages/){:target="_blank"}
 2. [GitHub Creating and Highlighting Code Blocks Doc](https://help.github.com/articles/creating-and-highlighting-code-blocks/){:target="_blank"}
 
-{% include eof.md %}
