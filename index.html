@@ -386,45 +386,4 @@ data.addRows([
 
 </script>
 
-/*
-<script type="text/javascript">
-  // skill animation when scrolled to
-  $(document).ready(function () {
-    /* Every time the window is scrolled ... */
-    $(window).scroll(function () {
-      /* Check the location of each desired element */
-      $(".project").each(function (i) {
-        var top_of_object = $(this).offset().top;
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-        /* If the object is completely visible in the window, fade it it */
-        if (
-          bottom_of_window > top_of_object &&
-          typeof timeBars === "undefined"
-        ) {
-          timeBars = 0;
-          // Animate bars
-          $(".horizontal-bar").each(function () {
-            var that = $(this);
-            setTimeout(function () {
-              that.animate({ width: that.attr("data-percent") }, 1000);
-            }, timeBars);
-            timeBars += 25;
-          });
-        }
-      });
-    });
-  });
-
-  // Project tile animation
-  var timeProjects = 0;
-  $(document).ready(function () {
-    $(".project").each(function () {
-      var that = $(this);
-      setTimeout(function () {
-        that.animate({ opacity: 0.9 }, 1000);
-      }, timeProjects);
-      timeProjects += 300;
-    });
-  });
-</script>
