@@ -889,3 +889,6 @@ a .button_sleek1,
   max-width: 1000px;
 }
 
+.highlighter-rouge {
+  background: gray;
+}
