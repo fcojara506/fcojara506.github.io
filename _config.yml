@@ -8,4 +8,6 @@ github_username:  fcojara506
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:title
+highlighter: rouge
+    input: GFM
+#permalink: /:year/:month/:title
