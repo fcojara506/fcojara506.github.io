@@ -1,91 +1,62 @@
 ---
+title: "A minimal R Markdown example"
+
+
+date: "August 15, 2016"
 layout: default
-title: "How to highlight code on a Jekyll site - Syntax Highlighting"
-date: 2019-02-11 20:00:00 -0800
-categories: Web
-tags:
-  - Jekyll
-header: 
-  teaser: /assets/images/jekyll.png
 ---
-To have code snippets highlighted so that they are more reader-friendly, we have to wrap our code using the following syntax.
 
-## 1 Jekyll Rouge Highlight Tag
-You can install kramdown markdown parser and [rouge highlighter](http://rouge.jneen.net/){:target="_blank"} - Jekyll's default highlighter using the following command:
-```
-gem install kramdown rouge
-```
 
-After installing kramdown and rouge, you can add the following to your _config.yml file.
-```yaml
-markdown: kramdown
-highlighter: rouge
-    input: GFM
-```
-
-After that, you can now highlight your code by surrounding your code with {% raw %}{% highlight language %}{% endraw %} and {% raw %}{% endhighlight %}{% endraw %}. Replace languageCode with the code language. You can refer to this [rouge doc](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"} for the list of supported languages.
-
-### Example:
-<pre class='code'>
-<code>{% raw %}
-{% highlight javascript %}
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }  
-}  
-{% endhighlight %}
-{% endraw %}</code>
-</pre>
-
-You can read [liquid tags doc](https://jekyllrb.com/docs/liquid/tags/){:target="_blank"} for more detailed information.
-
-## 2 GitHub Flavored Markdown Fenced Code Blocks
-We can also use [GitHub Fenced Code Blocks](https://help.github.com/articles/creating-and-highlighting-code-blocks/){:target="_blank"} syntax. This syntax seems to be less verbose and cleaner. 
-
-### Example:
-<pre class='code'>
-<code>```
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }
-}
-
-```</code>
-</pre>
-
-To syntax highlight for code of a specific language, you can add the language name next to the opening 3 backticks. You can refer to this [rouge doc](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"} for the list of supported languages.
-
-### Example with language specified:
-<pre class='code'>
-<code>```javascript
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }
-}
-```</code>
-</pre>
-
-## Result
-```javascript
-function sayHello(name) {
-  if (!name) {
-    console.log('Hello World');
-  } else {
-    console.log(`Hello ${name}`);
-  }
-}
-```
-
-## References:
-1. [GitHub Syntax Highlighting Doc](https://help.github.com/articles/using-syntax-highlighting-on-github-pages/){:target="_blank"}
-2. [GitHub Creating and Highlighting Code Blocks Doc](https://help.github.com/articles/creating-and-highlighting-code-blocks/){:target="_blank"}
-
+<section class="main-content">
+<div id="quotes" class="section level2">
+<h2>Quotes</h2>
+<blockquote>
+<p>I love R and I like writing articles with R Markdown.</p>
+</blockquote>
+</div>
+<div id="lists" class="section level2">
+<h2>Lists</h2>
+<p>This is a bullet list:</p>
+<ul>
+<li>item 1,</li>
+<li>item 2.</li>
+</ul>
+<p>This is an ordered list:</p>
+<ol style="list-style-type: decimal">
+<li>item 3,</li>
+<li>item 4.</li>
+</ol>
+</div>
+<div id="equations" class="section level2">
+<h2>Equations</h2>
+<p>This is an inline equation with an inline R code chunk: <span class="math inline">\(\pi = 3.1415927\)</span>.</p>
+<p>This is the Gaussian integral equation: <span class="math display">\[\int_{-\infty}^{+\infty} e^{-x^2}~dx = \sqrt{\pi}.\]</span></p>
+</div>
+<div id="plots" class="section level2">
+<h2>Plots</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">exp</span>(<span class="op">-</span>x<span class="op">^</span><span class="dv">2</span>), <span class="op">-</span><span class="fl">2.5</span>, <span class="fl">2.5</span>)</code></pre></div>
+<div class="figure" style="text-align: center">
+<img src="{{ site.url }}{{ site.baseurl }}/knitr_files/knitr-minimal_files/figure-html/unnamed-chunk-1-1.png" alt="This is a nice plot."  />
+<p class="caption">
+This is a nice plot.
+</p>
+</div>
+</div>
+<div id="images" class="section level2">
+<h2>Images</h2>
+<ul>
+<li>An image from Barry Clark’s GitHub account:</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png" alt="Jekyll Now is the base of this template" />
+<p class="caption">Jekyll Now is the base of this template</p>
+</div>
+<ul>
+<li>A local image:</li>
+</ul>
+<div class="figure">
+<img src="{{ site.url }}{{ site.baseurl }}/images/github-pages.jpg" alt="Thanks GitHub for hosting my website!" />
+<p class="caption">Thanks GitHub for hosting my website!</p>
+</div>
+</div>
+</section>
