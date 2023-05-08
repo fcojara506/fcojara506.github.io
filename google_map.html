@@ -1,93 +1,47 @@
-<div id="map"></div>
-<script>
-  // This is a simple polygon representing the MRPD Rescue Zone.
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KML Polygons</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+      const SHAPE_URL = "https://www.pronosticocaudales.cl/assets/cuencas_fondef_dga_20230507-c40b2bc6d6774352884feaa0bc36ae9281bfd9695a761ce51cbf5da426adcd9e.kml";
 
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 9,
-      center: {
-        lat: -16.4836,
-        lng: 145.4653
-      },
-      mapTypeId: 'terrain'
-    });
-    // Construction of polygon.
-    var mrpdPolygon = new google.maps.Polygon({
-      paths: polygonCoords,
-      strokeColor: '#FF0000',
-      strokeOpacity: 0.6,
-      strokeWeight: 1,
-      fillColor: '#FF0000',
-      fillOpacity: 0.10
-    });
-    mrpdPolygon.setMap(map);
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i < mrpdPolygon.getPath().getLength(); i++) {
-      bounds.extend(mrpdPolygon.getPath().getAt(i));
-    }
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 6,
+          center: { lat: -33.4372, lng: -70.6506 }, // Chile's center coordinates
+        });
 
-    var infowindow = new google.maps.InfoWindow();
-    infowindow.opened = false;
+        const kmlLayer = new google.maps.KmlLayer({
+          url: SHAPE_URL,
+          map: map,
+        });
 
-    function mousefn(evt) {
-      infowindow.setContent("polygon<br>coords:" + bounds.getCenter().toUrlValue(6));
-      infowindow.setPosition(bounds.getCenter());
-      infowindow.open(map);
-    }
-    google.maps.event.addListener(mrpdPolygon, 'mouseover', mousefn);
-    // google.maps.event.addListener(mrpdPolygon, 'mousemove', mousefn);
-    google.maps.event.addListener(mrpdPolygon, 'mouseout', function(evt) {
-      infowindow.close();
-      infowindow.opened = false;
-    });
-    // hover
-google.maps.event.addListener(mrpdPolygon,"mouseover",function(){
- this.setOptions({fillColor: "#00FF00"});
-}); 
-google.maps.event.addListener(mrpdPolygon,"mouseout",function(){
- this.setOptions({fillColor: "#FF0000"});
-});
-    
-    
-  }
+        // Add an event listener to show an infowindow with polygon info
+        kmlLayer.addListener("click", (event) => {
+          const infowindow = new google.maps.InfoWindow({
+            content: event.featureData.description,
+          });
 
-  // Definition of the LatLng coordinates for the polygon's path.
-  var polygonCoords = [{
-      lat: -16.4836,
-      lng: 145.4653
-    },
-    {
-      lat: -16.4500,
-      lng: 145.4133
-    },
-    {
-      lat: -16.2319,
-      lng: 145.4763
-    },
-    {
-      lat: -16.0878,
-      lng: 145.4548
-    },
-    {
-      lat: -16.0454,
-      lng: 145.9000
-    },
-    {
-      lat: -16.4861,
-      lng: 146.1269
-    },
-    {
-      lat: -16.7229,
-      lng: 145.6500
-    },
-    {
-      lat: -16.5913,
-      lng: 145.5192
-    },
-  ];
-
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
-
-
-</script>
+          infowindow.setPosition(event.latLng);
+          infowindow.open(map);
+        });
+      }
+    </script>
+    <style>
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>

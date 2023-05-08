@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html,
+    body,
+    #map {
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    // This is a simple polygon representing the MRPD Rescue Zone.
+  
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 9,
+        center: {
+          lat: -16.4836,
+          lng: 145.4653
+        },
+        mapTypeId: 'terrain'
+      });
+      // Construction of polygon.
+      var mrpdPolygon = new google.maps.Polygon({
+        paths: polygonCoords,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.6,
+        strokeWeight: 1,
+        fillColor: '#FF0000',
+        fillOpacity: 0.10
+      });
+      mrpdPolygon.setMap(map);
+      var bounds = new google.maps.LatLngBounds();
+      for (var i = 0; i < mrpdPolygon.getPath().getLength(); i++) {
+        bounds.extend(mrpdPolygon.getPath().getAt(i));
+      }
+  
+      var infowindow = new google.maps.InfoWindow();
+      infowindow.opened = false;
+  
+      function mousefn(evt) {
+        infowindow.setContent("polygon<br>coords:" + bounds.getCenter().toUrlValue(6));
+        infowindow.setPosition(bounds.getCenter());
+        infowindow.open(map);
+      }
+      google.maps.event.addListener(mrpdPolygon, 'mouseover', mousefn);
+      // google.maps.event.addListener(mrpdPolygon, 'mousemove', mousefn);
+      google.maps.event.addListener(mrpdPolygon, 'mouseout', function(evt) {
+        infowindow.close();
+        infowindow.opened = false;
+      });
+      // hover
+  google.maps.event.addListener(mrpdPolygon,"mouseover",function(){
+   this.setOptions({fillColor: "#00FF00"});
+  }); 
+  google.maps.event.addListener(mrpdPolygon,"mouseout",function(){
+   this.setOptions({fillColor: "#FF0000"});
+  });
+      
+      
+    }
+  
+    // Definition of the LatLng coordinates for the polygon's path.
+    var polygonCoords = [{
+        lat: -16.4836,
+        lng: 145.4653
+      },
+      {
+        lat: -16.4500,
+        lng: 145.4133
+      },
+      {
+        lat: -16.2319,
+        lng: 145.4763
+      },
+      {
+        lat: -16.0878,
+        lng: 145.4548
+      },
+      {
+        lat: -16.0454,
+        lng: 145.9000
+      },
+      {
+        lat: -16.4861,
+        lng: 146.1269
+      },
+      {
+        lat: -16.7229,
+        lng: 145.6500
+      },
+      {
+        lat: -16.5913,
+        lng: 145.5192
+      },
+    ];
+  
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap"></script>
+</body>
+</html>
