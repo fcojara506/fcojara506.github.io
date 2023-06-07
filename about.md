@@ -13,9 +13,9 @@ I've spent a good chunk of my career in the field of water resources and analyti
 
 Check out the projects I'm working on at the moment.
 
-Linkedin: https://www.linkedin.com/in/fcojara506/
-Github: https://github.com/fcojara506
-Email: fcojara506 at gmail.com
+- Linkedin: https://www.linkedin.com/in/fcojara506/
+- Github: https://github.com/fcojara506
+- Email: fcojara506 at gmail.com
 
 
 
