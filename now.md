@@ -21,6 +21,7 @@ Away from the screen, I'm getting to grips with life in the UK. Even though I've
 
 I practice table tennis on Wednesdays and Fridays in the Community club. The physical part is always evolving as I discover new players with intricate strategies. In England compared to Chile, I find intriguing that a lot of people drills are excellent but lose easily in the games. I think people in Chile tend to hide their abilities to surprise in the game.
 
+
 ***
 Keep an eye on this page for updates on what I'm up to. As my story continues to unfold, I'm excited to share it with you.
 
