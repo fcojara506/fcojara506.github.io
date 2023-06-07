@@ -8,7 +8,9 @@ github_username:  fcojara506
 # Build settings
 include:
   - _pages
+  - _data
 
+permalink: /:categories/:year/:month/:day/:title:output_ext
 
 
 # Conversion
@@ -23,7 +25,3 @@ kramdown:
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
     css_class: 'highlight'
-navbar:
-    left:
-      - href: posts.qmd
-        text: blogy
