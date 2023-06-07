@@ -1,7 +1,5 @@
 ---
 title: "A minimal R Markdown example"
-
-
 date: "August 15, 2016"
 layout: default
 ---
