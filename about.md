@@ -7,7 +7,7 @@ layout: pages
 
 I'm Francisco. I'm a Chilean guy and since Dec 2022 I've been living in England. It's been a fascinating experience, self challenging, full of new activities, beautiful landscapes and rather diverse people.
 
-<img src="https://github.com/fcojara506/fcojara506.github.io/blob/main/assets/img/me/me_drawing.jpg" width="900px">
+<img src="assets/img/me/me_drawing.jpg" width="900px">
 
 I've spent a good chunk of my career in the field of water resources and analytics. Right now, I'm finding connection with the world of data science. 
 

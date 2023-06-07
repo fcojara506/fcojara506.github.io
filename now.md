@@ -16,14 +16,16 @@ A non ordered (or complete) list of experiments:
 
 Away from the screen, I'm getting to grips with life in the UK. Even though I've been here for a while, there's always something new to discover. There is different way to approach nature, which expresses for example in lots of home gardens and lovely botanical gardens.
 
-<img src="https://github.com/fcojara506/fcojara506.github.io/blob/main/assets/img/me/me_edinburgh.jpg" width="900px">
+<img src="assets/img/me/me_edinburgh.jpg" width="900px">
 
 
 I practice table tennis on Wednesdays and Fridays in the Community club. The physical part is always evolving as I discover new players with intricate strategies. In England compared to Chile, I find intriguing that a lot of people drills are excellent but lose easily in the games. I think people in Chile tend to hide their abilities to surprise in the game.
 
 ***
 Keep an eye on this page for updates on what I'm up to. As my story continues to unfold, I'm excited to share it with you.
+
 ***
 If you've got any questions, ideas, or just fancy a chat, don't hesitate to get in touch.
+
 ***
 this is a now page read more about: https://nownownow.com/about
